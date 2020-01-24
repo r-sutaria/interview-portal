@@ -1,7 +1,6 @@
 import React from "react";
 // import {Navbar,NavbarBrand,Collapse,NavbarToggler,Nav,NavItem,NavLink,NavbarText} from 'reactstrap';
-import {Form,FormGroup,Label,Input,FormText,Button} from 'reactstrap';
-import {FaTimes} from "react-icons/fa";
+import {Form,FormGroup,Label,Input,Button,Row,Col} from 'reactstrap';
 import RoundCard from "./RoundCard";
 export default class ExperienceForm extends React.Component {
 
@@ -50,7 +49,7 @@ export default class ExperienceForm extends React.Component {
         this.setState({
             rounds: modifiedList
         })
-    }
+    };
 
     onChangeTitle = (event,round) => {
         const list = this.state.rounds.slice();
@@ -58,7 +57,7 @@ export default class ExperienceForm extends React.Component {
         this.setState({
             rounds: list
         })
-    }
+    };
 
     onChangeDetails = (event,round) => {
         const list = this.state.rounds.slice();
@@ -77,7 +76,7 @@ export default class ExperienceForm extends React.Component {
                 onChangeDetails={this.onChangeDetails}
                 round={round}
             />);
-    }
+    };
 
     render() {
         return (
@@ -124,6 +123,17 @@ export default class ExperienceForm extends React.Component {
                             <option value={'Samsung'}>Samsung</option>
                             <option value={'Google'}>Google</option>
                         </Input>
+                        <Row className={'mt-3'}>
+                            <Col md={2}>
+                                <Label
+                                    className="col-form-label text-center ml-3"
+                                    for={'company'}
+                                >
+                                    <h3>Rounds: </h3>
+                                </Label>
+                            </Col>
+                            <Col md={10}></Col>
+                        </Row>
                     </FormGroup>
                     {
                         this.state.rounds.map((round,index) =>

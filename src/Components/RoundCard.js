@@ -1,11 +1,11 @@
 import React from 'react';
-import {Button, Card, FormGroup, Input, Label,Row,Col,Container} from 'reactstrap';
-import {FaTimes,FaTrashAlt} from "react-icons/fa";
+import {Button, FormGroup, Input, Label,Row,Col} from 'reactstrap';
+import {FaTrashAlt} from "react-icons/fa";
 import './RoundCard.css';
 export default function RoundCard(props) {
     const {id,onClick,onChangeTitle,onChangeDetails,round} = props;
     return(
-        <FormGroup>
+        <FormGroup className={'border border-dark p-2 rounded'}>
             <Row>
                 <Col md={12}/>
                 <Col >
