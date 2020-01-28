@@ -1,6 +1,7 @@
 import React from "react";
 import {Col, Input, Label, Row,Form,Button} from "reactstrap";
 export default function LoginForm(props) {
+    const {onChangeUsernameLogin, onChangePasswordLogin, username, password} = props;
     return(
         <Form>
             <Row form={true} className={'my-2 mr-2'}>
@@ -13,9 +14,11 @@ export default function LoginForm(props) {
                 </Col>
                 <Col md={10}>
                     <Input
-                        id={'email'}
-                        type={'email'}
-                        name={'email'}
+                        id = {'email'}
+                        type = {'email'}
+                        name = {'email'}
+                        value = {username}
+                        onChange = {onChangeUsernameLogin}
                     />
                 </Col>
             </Row>
@@ -32,6 +35,8 @@ export default function LoginForm(props) {
                         id={'password'}
                         type={'password'}
                         name={'password'}
+                        value = {password}
+                        onChange = {onChangePasswordLogin}
                     />
                 </Col>
             </Row>

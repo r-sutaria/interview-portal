@@ -7,7 +7,9 @@ export default function RoundCard(props) {
     return(
         <FormGroup className={'border border-dark p-2 rounded'}>
             <Row>
-                <Col md={12}/>
+                <Col md={11}>
+                    <h3 className={'text-center'}>Round {id+1}</h3>
+                </Col>
                 <Col >
                     <Button
                         className={'btn-sm float-right m-1'}
@@ -20,15 +22,16 @@ export default function RoundCard(props) {
                     </Button>
                 </Col>
             </Row>
-            <Row form={true} className={'my-2 mr-2'}>
-                <Col md={1}>
+            <Row form={true} className={'my-3 mr-2'}>
+                <Col lg={'auto'} className={'col-form-label text-center'}>
                     <Label
                         for={'title'+id}
+                        className={'mx-3'}
                     >
-                        <b>Round Title</b>
+                        <h5><b>Round Title</b></h5>
                     </Label>
                 </Col>
-                <Col md={11}>
+                <Col>
                     <Input
                         id={'title'+id}
                         type={'text'}
@@ -41,14 +44,15 @@ export default function RoundCard(props) {
                 </Col>
             </Row>
             <Row form={true} className={'my-2 mr-2'}>
-                <Col sm={1}>
+                <Col xs={'auto'}>
                     <Label
                         for={'details'+id}
+                        lg={'auto'} className={'col-form-label text-center'}
                     >
-                        <b>Round Details</b>
+                        <h5><b>Round Details</b></h5>
                     </Label>
                 </Col>
-                <Col md={11}>
+                <Col md={12}>
                     <Input
                         id={'details'+id}
                         type={'textarea'}
