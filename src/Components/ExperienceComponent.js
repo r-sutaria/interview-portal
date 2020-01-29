@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function ExperienceList(props) {
 
-    return(<div>Experience List</div>);
+    return(<div className={'container'}>Experience List</div>);
 
 }

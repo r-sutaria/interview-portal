@@ -1,8 +1,10 @@
 import React from "react";
 import {Editor as DraftEditor, EditorState, RichUtils} from 'draft-js';
-import {Button} from 'reactstrap';
+import {Button,Media} from 'reactstrap';
 import styleMap from "../Constants/StyleMap";
 import {FaAlignLeft,FaAlignRight} from "react-icons/fa";
+import AnswerProfileCard from "./AnswerProfleCard";
+import 'draft-js/dist/Draft.css';
 
 export default class AnswerBox extends React.Component {
     constructor(props) {
@@ -13,10 +15,6 @@ export default class AnswerBox extends React.Component {
             innerHeight: 0
         };
     }
-
-    onChange = (editorState) => {
-        this.setState({editorState})
-    };
 
     handleKeyCommand(command, editorState) {
         const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -35,7 +33,7 @@ export default class AnswerBox extends React.Component {
     };
 
     isActive(style) {
-        const styles = this.state.editorState.getCurrentInlineStyle();
+        const styles = this.props.editorState.getCurrentInlineStyle();
         return styles.has(style);
     }
 
@@ -62,7 +60,7 @@ export default class AnswerBox extends React.Component {
                 size={'md'}
                 onMouseDown={(event)=>{
                     event.preventDefault();
-                    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, style));
+                    this.onChange(RichUtils.toggleInlineStyle(this.props.editorState, style));
                 }}
                 active={this.isActive(style)}
             >
@@ -78,9 +76,15 @@ export default class AnswerBox extends React.Component {
     }
 
     render() {
+        const onChange = this.props.onChange;
         return(
-            <div className={'bg-light'}>
-                <div className={'mx-3 border-dark rounded-top border border-bottom-0'} style={{width:'70%'}}>
+            <div className={'mx-3 mb-3'}>
+                <AnswerProfileCard
+                    src={'/pikachu.jpg'}
+                    name={'Rutvik Sutaria'}
+                    description={'8th semester CSE student'}
+                />
+                <div className={'mx-3 border-dark rounded-top border bg-light border-bottom-0'} style={{width:'97%'}}>
                     <div>
                         {
                             this.buttons.map(
@@ -89,12 +93,12 @@ export default class AnswerBox extends React.Component {
                         }
                     </div>
                 </div>
-                <div className={'border rounded-bottom border-dark mx-3'} style={{width:'70%',minHeight:this.state.innerHeight/3,marginLeft:10,backgroundColor:'#FFFFFF'}}>
-                    <div className={'mx-2'}>
+                <div className={'border rounded-bottom border-dark mx-3'} style={{width:'97%',minHeight:this.state.innerHeight/3,marginLeft:10,backgroundColor:'#FFFFFF'}}>
+                    <div className={'mx-2 p-1'}>
                         <DraftEditor
-                            editorState={this.state.editorState}
+                            editorState={this.props.editorState}
                             customStyleMap={styleMap}
-                            onChange={this.onChange}
+                            onChange={onChange}
                             handleKeyCommand={this.handleKeyCommand}
                             placeholder={'Type your answer..'}
                             ref={(editor) => {
@@ -106,10 +110,10 @@ export default class AnswerBox extends React.Component {
                 <Button
                     type={'submit'}
                     color={'dark'}
-                    className={'mt-1 ml-3'}
+                    className={'mt-1 ml-3 mb-2'}
                     onClick={(e) => {
                         e.preventDefault();
-                        console.log('Submitted');
+                        this.props.onSubmit();
                     }}
                     size={'sm'}
                 >

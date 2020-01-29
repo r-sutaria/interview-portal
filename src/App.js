@@ -4,12 +4,13 @@ import ExperienceForm from "./Components/interview-form";
 import NavbarComponent from "./Components/NavbarComponent";
 import ExperienceList from "./Components/ExperienceComponent";
 import BlogList from "./Components/BlogsList";
+import Sidebar from "./Components/SidebarComponent";
 export default class App extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: <ExperienceForm />,
+            currentPage: <BlogList />,
             user: null,
             users: {
                 'user1' : 'password',
@@ -67,7 +68,11 @@ export default class App extends React.Component{
                     onClickSignOut = {this.onClickSignOut}
                     user = {this.state.user}
                 />
-                {this.state.currentPage}
+                <div style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>
+                    <Sidebar/>
+                    <div className={'mr-4'}></div>
+                    {this.state.currentPage}
+                </div>
             </div>
         );
     }
