@@ -115,7 +115,7 @@ export default class CodeEditor extends React.Component {
                             >
                                 <MdRestore size = '23px'/>
                             </Button>
-                            <UncontrolledDropdown navbar className={'mr-2'}>
+                            <UncontrolledDropdown className={'mr-2'}>
                                 <DropdownToggle
                                     caret={true}
                                     className={'bg-white text-dark'}

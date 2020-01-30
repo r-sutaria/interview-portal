@@ -6,6 +6,7 @@ import ExperienceList from "./Components/ExperienceComponent";
 import BlogList from "./Components/BlogsList";
 import Sidebar from "./Components/SidebarComponent";
 import CodeEditor from "./Components/CodeEditor";
+import Main from './Components/Main';
 export default class App extends React.Component{
 
     constructor(props) {
@@ -80,8 +81,9 @@ export default class App extends React.Component{
                 />
                 <div style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>
                     <Sidebar/>
-                    <div className={'mr-4'}></div>
-                    {this.state.currentPage}
+                    <div className={'mr-4'}>
+                    </div>
+                    <Main />
                 </div>
             </div>
         );
