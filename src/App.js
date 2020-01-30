@@ -5,12 +5,13 @@ import NavbarComponent from "./Components/NavbarComponent";
 import ExperienceList from "./Components/ExperienceComponent";
 import BlogList from "./Components/BlogsList";
 import Sidebar from "./Components/SidebarComponent";
+import CodeEditor from "./Components/CodeEditor";
 export default class App extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: <BlogList />,
+            currentPage: <CodeEditor />,
             user: null,
             users: {
                 'user1' : 'password',
@@ -36,7 +37,7 @@ export default class App extends React.Component{
     onClickLogo = (event) => {
         this.setState({
             currentPage: <ExperienceForm />
-        })
+        });
         event.preventDefault();
     };
 
@@ -54,8 +55,16 @@ export default class App extends React.Component{
     onClickSignOut = (event) => {
         this.setState({
             user: null
-        })
-    }
+        });
+        event.preventDefault();
+    };
+
+    onCLickPractice = (event) => {
+        this.setState({
+            currentPage: <CodeEditor />
+        });
+        event.preventDefault();
+    };
 
     render() {
         return(
@@ -66,6 +75,7 @@ export default class App extends React.Component{
                     onClickLogo = {this.onClickLogo}
                     onClickLogin = {this.onClickLogin}
                     onClickSignOut = {this.onClickSignOut}
+                    onCLickPractice = {this.onCLickPractice}
                     user = {this.state.user}
                 />
                 <div style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>

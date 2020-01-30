@@ -143,8 +143,7 @@ export default class NavbarComponent extends React.Component {
                                             textDecoration: 'none'
                                         }}
                                         onClick={(event)=>{
-                                            console.log('hi');
-                                            event.preventDefault();
+                                            this.props.onCLickPractice(event);
                                         }}
                                     >
                                         Practice
