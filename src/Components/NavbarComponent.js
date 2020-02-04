@@ -1,6 +1,7 @@
 import React from "react";
 import SidebarComponent from "./SidebarComponent";
 import './NavbarComponent.css';
+import {Link} from 'react-router-dom';
 import {
     Collapse,
     Nav,
@@ -81,10 +82,16 @@ export default class NavbarComponent extends React.Component {
                         <NavbarBrand
                             href={'/'}
                             className={'text-left'}
-                            onClick = {this.props.onClickLogo}
                             style={{width:'13%'}}
                         >
-                            <span className={"text-white"}>InterviewPortal</span>
+                            <Link
+                                to={'/'}
+                                className={'text-white'}
+                                style={{textDecoration: 'none'}}
+                                onMouseDown = {(e) => e.preventDefault()}
+                            >
+                                InterviewPortal
+                            </Link>
                         </NavbarBrand>
                         <div className="d-flex flex-grow-1 mr-2">
                             <Form className="mr-2 my-auto w-100 d-inline-block order-1">
@@ -125,29 +132,23 @@ export default class NavbarComponent extends React.Component {
                                 </NavItem>
 
                                 <NavItem>
-                                    <Button
-                                        color={'link text-white'}
-                                        style={{
-                                            textDecoration: 'none'
-                                        }}
-                                        onClick={this.props.onClickBlogs}
+                                    <Link
+                                        className={'btn text-white'}
+                                        onMouseDown = {(e)=>e.preventDefault()}
+                                        to={'/queries'}
                                     >
                                         Blogs
-                                    </Button>
+                                    </Link>
                                 </NavItem>
 
                                 <NavItem>
-                                    <Button
-                                        color={'link text-white'}
-                                        style={{
-                                            textDecoration: 'none'
-                                        }}
-                                        onClick={(event)=>{
-                                            this.props.onCLickPractice(event);
-                                        }}
+                                    <Link
+                                        className={'btn text-white'}
+                                        onMouseDown={(e)=>e.preventDefault()}
+                                        to={'/practice'}
                                     >
                                         Practice
-                                    </Button>
+                                    </Link>
                                 </NavItem>
 
                                 <UncontrolledDropdown nav inNavbar>
@@ -159,7 +160,12 @@ export default class NavbarComponent extends React.Component {
                                             Placement 2020
                                         </DropdownItem>
                                         <DropdownItem>
-                                            Placement Report 2019
+                                            <Link
+                                                style={{textDecoration:'none',color:'#000000'}}
+                                                to={'/placement-report-2019'}
+                                            >
+                                                Placement Report 2019
+                                            </Link>
                                         </DropdownItem>
                                         <DropdownItem divider />
                                         <DropdownItem>

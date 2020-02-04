@@ -6,6 +6,7 @@ import ExperienceList from "./Components/ExperienceComponent";
 import BlogList from "./Components/BlogsList";
 import Sidebar from "./Components/SidebarComponent";
 import CodeEditor from "./Components/CodeEditor";
+import PlacementReport from "./Components/PlacementReport";
 import Main from './Components/Main';
 export default class App extends React.Component{
 
@@ -83,7 +84,7 @@ export default class App extends React.Component{
                     <Sidebar/>
                     <div className={'mr-4'}>
                     </div>
-                    <Main />
+                    <Main/>
                 </div>
             </div>
         );

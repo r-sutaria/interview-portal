@@ -119,6 +119,7 @@ export default class CodeEditor extends React.Component {
                                 <DropdownToggle
                                     caret={true}
                                     className={'bg-white text-dark'}
+                                    onMouseDown={(e)=>e.preventDefault()}
                                 >
                                     Theme
                                 </DropdownToggle>
@@ -183,7 +184,7 @@ export default class CodeEditor extends React.Component {
                                         mode: this.mode_map[val]
                                     })
                                 }}
-                                >
+                            >
                                 <option value={'c'}>C</option>
                                 <option value={'cpp'}>C++</option>
                                 <option value={'java'}>Java</option>
