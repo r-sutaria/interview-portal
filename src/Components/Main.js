@@ -7,6 +7,7 @@ import BlogList from "./BlogsList";
 import Sidebar from "./SidebarComponent";
 import CodeEditor from "./CodeEditor";
 import PlacementReport from "./PlacementReport";
+import ExperiencePage from "./ExperiencePage";
 
 export default function Main() {
     return(
@@ -15,6 +16,7 @@ export default function Main() {
         <Route exact path={'/practice'} component={CodeEditor} />
         <Route exact path={'/queries'} component={BlogList}/>
         <Route exact path={'/experiences'} component={ExperienceList} />
+        <Route exact path={'/experience1'} component={ExperiencePage} />
         <Route exact path={'/placement-report-2019'}
                component={
                    () => <PlacementReport
@@ -28,9 +30,9 @@ export default function Main() {
                            responsive: true,
                            legend: {
                                labels: {
-                                   fontStyle: 'none',
+                                   display: false,
                                    fontColor: 'black',
-                                   maintainAspectRatio: true
+                                   fontSize: 13,
                                }
                            }
                        }}

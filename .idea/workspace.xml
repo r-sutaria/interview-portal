@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/ExperiencePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Rutvik_Sutaria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Rutvik_Sutaria.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AnswerBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerBox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/BlogsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BlogsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/NavbarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavbarComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlacementReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlacementReport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RoundCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RoundCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/interview-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/interview-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +119,7 @@
       <workItem from="1580375258726" duration="1463000" />
       <workItem from="1580444204550" duration="9995000" />
       <workItem from="1580789925791" duration="16713000" />
-      <workItem from="1580872742736" duration="1172000" />
+      <workItem from="1580872742736" duration="12804000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -168,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580791944115</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added experience card.">
+      <created>1580877146736</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580877146736</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +204,8 @@
     <MESSAGE value="Added Code editor and problem statements page." />
     <MESSAGE value="Made the application multi-paged." />
     <MESSAGE value="Added practice question page and placement report page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added practice question page and placement report page" />
+    <MESSAGE value="Added experience card." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added experience card." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="23" key="#ESLint" timestamp="1579757895881">
@@ -206,30 +216,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579675473540" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580791938722">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580877141059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580791938722" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580877141059" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580122083691">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580122083691" />
-    <state width="1323" height="115" key="GridCell.Tab.0.bottom" timestamp="1580811033840">
+    <state width="639" height="115" key="GridCell.Tab.0.bottom" timestamp="1580894243562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="115" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580811033840" />
-    <state width="1323" height="115" key="GridCell.Tab.0.center" timestamp="1580811033840">
+    <state width="639" height="115" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580894243562" />
+    <state width="639" height="115" key="GridCell.Tab.0.center" timestamp="1580894243561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="115" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580811033840" />
-    <state width="1323" height="115" key="GridCell.Tab.0.left" timestamp="1580811033839">
+    <state width="639" height="115" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580894243561" />
+    <state width="639" height="115" key="GridCell.Tab.0.left" timestamp="1580894243561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="115" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580811033839" />
-    <state width="1323" height="115" key="GridCell.Tab.0.right" timestamp="1580811033840">
+    <state width="639" height="115" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580894243561" />
+    <state width="639" height="115" key="GridCell.Tab.0.right" timestamp="1580894243561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="115" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580811033840" />
+    <state width="639" height="115" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580894243561" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1580374871701">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -282,10 +292,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580874206327" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1580364033259">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1580878495616">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580364033259" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580878495616" />
     <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1580193215438">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

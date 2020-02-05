@@ -17,7 +17,6 @@ export default function RoundCard(props) {
                         onClick={(event) => {
                             onClick(event,round);
                         }}
-                        disabled={id.toString() === '0'}
                     >
                         <FaTrashAlt/>
                     </Button>

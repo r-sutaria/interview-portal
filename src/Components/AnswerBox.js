@@ -37,7 +37,7 @@ export default class AnswerBox extends React.Component {
         return styles.has(style);
     }
 
-    buttons = ['BOLD','ITALIC','UNDERLINE','H1','H2','H3','H4','H5','LEFT','RIGHT'];
+    buttons = ['BOLD','ITALIC','UNDERLINE','H1','H2','H3','H4','H5','LEFT','RIGHT',];
     labels = [
         <b>B</b>,
         <i>I</i>,

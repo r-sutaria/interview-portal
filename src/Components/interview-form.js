@@ -1,6 +1,6 @@
 import React from "react";
 // import {Navbar,NavbarBrand,Collapse,NavbarToggler,Nav,NavItem,NavLink,NavbarText} from 'reactstrap';
-import {Form,FormGroup,Label,Input,Button,Row,Col,FormText,Card} from 'reactstrap';
+import {Form,FormGroup,Label,Input,Button,Row,Col,FormText,Card,CustomInput} from 'reactstrap';
 import RoundCard from "./RoundCard";
 export default class ExperienceForm extends React.Component {
 
@@ -15,8 +15,13 @@ export default class ExperienceForm extends React.Component {
                     details: ''
                 }
             ],
-            internship:false,
-            employment: false
+            internship:true,
+            employment: false,
+            receivedOffer: true,
+            stipend:'',
+            ctc:'',
+            jobProfile:'',
+            jobType:''
         };
         this.addRound = this.addRound.bind(this);
         this.onChangeDetails = this.onChangeDetails.bind(this);
@@ -127,7 +132,8 @@ export default class ExperienceForm extends React.Component {
                                 onChange = {(e) => {
                                     this.setState({
                                         internship: e.target.value,
-                                        employment: false
+                                        employment: false,
+                                        jobType: '2-month Internship'
                                     })
                                 }}
                             />
@@ -140,7 +146,8 @@ export default class ExperienceForm extends React.Component {
                                 onChange = {(e) => {
                                     this.setState({
                                         internship: e.target.value,
-                                        employment: false
+                                        employment: false,
+                                        jobType: '6-month Internship'
                                     })
                                 }}
                             />
@@ -153,7 +160,8 @@ export default class ExperienceForm extends React.Component {
                                 onChange = {(e) => {
                                     this.setState({
                                         internship: false,
-                                        employment: e.target.value
+                                        employment: e.target.value,
+                                        jobType: 'Full TIme Employment'
                                     })
                                 }}
                             />
@@ -166,7 +174,8 @@ export default class ExperienceForm extends React.Component {
                                 onChange = {(e) => {
                                     this.setState({
                                         internship: e.target.value,
-                                        employment: e.target.value
+                                        employment: e.target.value,
+                                        jobType: '6-month + Full time Employment'
                                     })
                                 }}
                             />
@@ -187,11 +196,18 @@ export default class ExperienceForm extends React.Component {
                                     < Input
                                         type='number'
                                         name='number'
-                                        id='ctc'
-                                        className={'col-1'}
+                                        id='stipend'
+                                        min={'0'}
+                                        className={'col-2'}
+                                        onChange={(e) => {
+                                            this.setState({
+                                                stipend: e.target.value + ' per month'
+                                            })
+                                        }
+                                        }
                                     />
                                     <div className={'col-lg-3 col-form-label'}>
-                                        <b>thousand per month</b>
+                                        <b> per month</b>
                                     </div>
                                 </FormGroup>
                             :
@@ -211,10 +227,17 @@ export default class ExperienceForm extends React.Component {
                                         type='number'
                                         name='number'
                                         id='ctc'
-                                        className={'col-1'}
+                                        className={'col-2'}
+                                        min={'0'}
+                                        onChange={(e) => {
+                                            this.setState({
+                                                ctc: e.target.value + ' per annum'
+                                            })
+                                        }
+                                        }
                                     />
-                                    <div className={'col-lg-1 col-form-label'}>
-                                        <b>in LPA</b>
+                                    <div className={'col-lg-2 col-form-label'}>
+                                        <b>per annum</b>
                                     </div>
                                 </FormGroup>
                                 :
@@ -233,7 +256,45 @@ export default class ExperienceForm extends React.Component {
                             name='text'
                             id={'job-profile'}
                             className={'col-lg-4'}
+                            value={this.state.jobProfile}
+                            onChange={(e) => {
+                                this.setState({
+                                    jobProfile: e.target.value
+                                })
+                            }}
                         />
+                    </FormGroup>
+                    <FormGroup className={'row'}>
+                        <Label
+                            className={'col-2 col-form-label'}
+                            for={'receivedOffer'}
+                        >
+                            <h5><b>Received Offer</b></h5>
+                        </Label>
+                        <CustomInput
+                            className={'col-form-label'}
+                            id={'receivedOfferYes'}
+                            type={'radio'}
+                            name={'offerSwitch'}
+                            onChange={(e) => {
+                                this.setState({
+                                    receivedOffer: true
+                                });
+                            }}
+                        />
+                        <Label for={'receivedOfferYes'} className={'col-form-label mr-3'}><b>Yes</b></Label>
+                        <CustomInput
+                            className={'col-form-label'}
+                            id={'receivedOfferNo'}
+                            type={'radio'}
+                            name={'offerSwitch'}
+                            onChange={(e) => {
+                                this.setState({
+                                    receivedOffer: false
+                                });
+                            }}
+                        />
+                        <Label for={'receivedOfferNo'} className={'col-form-label'}><b>No</b></Label>
                     </FormGroup>
                     <FormGroup>
                     {
@@ -249,9 +310,10 @@ export default class ExperienceForm extends React.Component {
                         )
                     }
                     </FormGroup>
-                    <FormGroup className={'ml-auto mr-auto p-3'}>
+                    <FormGroup className={'p-3'}>
                         <Button
                             color={'dark'}
+                            className={'mr-auto'}
                             onClick={
                                 (event) => {
                                     this.addRound(event);
@@ -259,6 +321,17 @@ export default class ExperienceForm extends React.Component {
                             }
                         >
                             Add Round
+                        </Button>
+                        <Button
+                            className={'float-right'}
+                            color={'dark'}
+                            onMoudeDown={
+                                (event) => {
+                                    event.preventDefault();
+                                }
+                            }
+                        >
+                            Submit
                         </Button>
                     </FormGroup>
                 </Form>

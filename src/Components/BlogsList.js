@@ -2,7 +2,7 @@ import React from "react";
 import AnswerBox from "./AnswerBox";
 import {Card,Button,ButtonDropdown,DropdownToggle,DropdownItem,DropdownMenu,Row,Col} from "reactstrap";
 import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,MdShare,FaStar} from "react-icons/all";
-import {Editor,EditorState} from 'draft-js';
+import {Editor,EditorState,convertToRaw,convertFromRaw} from 'draft-js';
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
 import AnswerCard from "./AnswerCard";
@@ -39,7 +39,7 @@ export default class BlogList extends React.Component {
     onSubmit = () => {
         this.setState({
             answers: [...this.state.answers,this.state.editorState]
-        })
+        });
     };
 
     render() {

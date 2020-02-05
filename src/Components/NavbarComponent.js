@@ -80,7 +80,6 @@ export default class NavbarComponent extends React.Component {
                 >
                     <div className={'container-fluid'}>
                         <NavbarBrand
-                            href={'/'}
                             className={'text-left'}
                             style={{width:'13%'}}
                         >
@@ -97,7 +96,7 @@ export default class NavbarComponent extends React.Component {
                             <Form className="mr-2 my-auto w-100 d-inline-block order-1">
                                 <InputGroup>
                                     <Input type="text"
-                                           placeholder="Search for companies..."
+                                           placeholder="Search for interview experiences, blogs and queries"
                                     />
                                     <InputGroupAddon addonType={'append'}>
                                             <Button
