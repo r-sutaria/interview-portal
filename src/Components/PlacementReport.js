@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Bar, Line, Pie } from "react-chartjs-2";
-
+import {Input} from 'reactstrap';
 export default class PlacementReport extends Component {
 
     constructor(props) {
@@ -15,13 +15,40 @@ export default class PlacementReport extends Component {
                         maintainAspectRatio: true
                     }
                 }
-            }
+            },
+            chartType: 'branch',
         }
     }
 
-    renderChart = data => {
+    componentDidMount() {
+        console.log(this.branchChartData);
+    }
+
+    renderPieChart = (data,label) => {
+        return(
+            <Pie
+                type={'pie'}
+                data={this.renderChart(data, label)}
+                options={this.props.options}
+                width={200}
+                height={50}
+            />
+        )
+    };
+
+    renderLineChart = (data,label) =>
+        <Line
+            type={'line'}
+            data={this.renderChart(data, label)}
+            options={this.props.options}
+            width={200}
+            height={50}
+        />
+    ;
+
+    renderChart = (data,labels) => {
         return {
-            labels: ['Amazon', 'Samsung', 'Microsoft', 'Media.net', 'Deutsche Bank', 'Morgan Stanley'],
+            labels: labels,
             datasets: [{
                 label: '# of Students Placed',
                 data: data,
@@ -31,7 +58,9 @@ export default class PlacementReport extends Component {
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -39,7 +68,9 @@ export default class PlacementReport extends Component {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(153, 102, 255, 1)',
                 ],
                 borderWidth: 1
             }]
@@ -47,18 +78,58 @@ export default class PlacementReport extends Component {
     };
 
     render() {
-        const { chartData } = this.props;
+        const { branchChartData,classChartData,yearChartData,branchLabels,classLabels,yearLabels } = this.props;
         return (
             <div
                 className="container"
             >
-                <Pie
-                    type={'pie'}
-                    data={this.renderChart(chartData)}
-                    options={this.state.options}
-                    width={200}
-                    height={50}
-                />
+                <h3 className={'text-center'}>
+                    Placement Report 2019-20
+                </h3>
+                <br/>
+                <p>
+                    Nirma University provides full placement support to its students in the fields of Technology,
+                    Management, Law, Pharmacy and Life Sciences.
+                </p>
+                <p>
+                    Over the last decades, the University has emerged as one of the most favoured destinations for hiring fresh talent from the campuses.
+                    Its endeavours to provide industry compliant talent and emphasises on quality, discipline, self-learning, and ethics.
+                </p>
+                <p>
+                    The placement model at Nirma is a four-stage process,
+                    involving the Pre Placement activities, Career Guidance, Executing Placement and Post Placement reviews.
+                </p>
+                <p>
+                    In addition to providing placement support to the students,
+                    the University also facilitates training of students in the organisations during summer and winter vacations,
+                    project work for the students in the final year, continuous institute-industry interactions,
+                    alumni activities, participation in exhibitions, fairs, seminars and conferences,
+                    counselling of the students on job opportunities, facilitating industry visits and inviting distinguished speakers.
+                </p>
+                <div>
+                    <h3 className={'text-center'}>
+                        Placement Statistics
+                    </h3>
+                    <Input
+                        name={'select'}
+                        type={'select'}
+                        id={'statistics-type'}
+                        onChange = {(e) => {
+                            this.setState({
+                                chartType: e.target.value
+                            });
+                            console.log(this.branchChartData);
+                            e.preventDefault();
+                        }}
+                    >
+                        <option value={'branch'}>Branch Wise</option>
+                        <option value={'class'}>Class Wise</option>
+                        <option value={'year'}>Year Wise</option>
+                    </Input>
+                    {this.state.chartType === 'branch' ? this.renderPieChart(branchChartData,branchLabels):<div></div>}
+                    {this.state.chartType === 'class' ? this.renderPieChart(classChartData,classLabels):<div></div>}
+                    {this.state.chartType === 'year' ? this.renderLineChart(yearChartData,yearLabels):<div></div>}
+                </div>
             </div>
         );
     }

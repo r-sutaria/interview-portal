@@ -120,15 +120,13 @@ export default class NavbarComponent extends React.Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className={'mr-auto'} navbar={true}>
                                 <NavItem>
-                                    <Button
-                                        color={'link text-white'}
-                                        style={{
-                                            textDecoration: 'none'
-                                        }}
-                                        onClick={this.props.onClickExperience}
+                                    <Link
+                                        className={'btn text-white'}
+                                        onMouseDown = {(e)=>e.preventDefault()}
+                                        to={'/experiences'}
                                     >
                                         Experiences
-                                    </Button>
+                                    </Link>
                                 </NavItem>
 
                                 <NavItem>

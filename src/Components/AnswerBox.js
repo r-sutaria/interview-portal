@@ -51,7 +51,7 @@ export default class AnswerBox extends React.Component {
         <FaAlignRight/>
     ];
 
-    renderButton(style,label) {
+    renderButton(style,label,onChange) {
         return(
             <Button
                 className={'btn-light border-dark border-0 m-1'}
@@ -60,7 +60,7 @@ export default class AnswerBox extends React.Component {
                 size={'md'}
                 onMouseDown={(event)=>{
                     event.preventDefault();
-                    this.onChange(RichUtils.toggleInlineStyle(this.props.editorState, style));
+                    onChange(RichUtils.toggleInlineStyle(this.props.editorState, style));
                 }}
                 active={this.isActive(style)}
             >
@@ -88,7 +88,7 @@ export default class AnswerBox extends React.Component {
                     <div>
                         {
                             this.buttons.map(
-                                (button,index) => this.renderButton(button,this.labels[index])
+                                (button,index) => this.renderButton(button,this.labels[index],onChange)
                             )
                         }
                     </div>

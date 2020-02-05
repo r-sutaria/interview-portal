@@ -14,7 +14,29 @@ export default function Main() {
         <Route exact path={'/'} component={ExperienceForm} />
         <Route exact path={'/practice'} component={CodeEditor} />
         <Route exact path={'/queries'} component={BlogList}/>
-        <Route exact path={'/placement-report-2019'} component={()=><PlacementReport chartData={[12, 19, 3, 5, 2, 3]} />}/>
+        <Route exact path={'/experiences'} component={ExperienceList} />
+        <Route exact path={'/placement-report-2019'}
+               component={
+                   () => <PlacementReport
+                       branchChartData={[50,60,70, 70, 70, 70, 70, 70]}
+                       classChartData={[20,50,100,200]}
+                       yearChartData={[120,160,180,200]}
+                       branchLabels = {['Computer Engineering', 'Information Technology', 'Electronics & Communication', 'Electrical Engineering', 'Mechanical Engineering', 'Chemical Engineering', 'Civil Engineering', 'Integration & Circuits']}
+                       classLabels = {['Class A', 'Class B', 'Class C', 'Class D']}
+                       yearLabels = {['2016','2017','2018','2019']}
+                       options= {{
+                           responsive: true,
+                           legend: {
+                               labels: {
+                                   fontStyle: 'none',
+                                   fontColor: 'black',
+                                   maintainAspectRatio: true
+                               }
+                           }
+                       }}
+                   />
+               }
+        />
     </Switch>
     );
 }

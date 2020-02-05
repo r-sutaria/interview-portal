@@ -80,11 +80,13 @@ export default class App extends React.Component{
                     onCLickPractice = {this.onCLickPractice}
                     user = {this.state.user}
                 />
-                <div style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>
-                    <Sidebar/>
-                    <div className={'mr-4'}>
+                <div className={'row'} style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>
+                    <div className={'col-1'}>
+                        <Sidebar/>
                     </div>
-                    <Main/>
+                    <div className={'col-10'}>
+                        <Main/>
+                    </div>
                 </div>
             </div>
         );

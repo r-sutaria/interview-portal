@@ -1,7 +1,7 @@
 import React from "react";
 import AnswerBox from "./AnswerBox";
 import {Card,Button,ButtonDropdown,DropdownToggle,DropdownItem,DropdownMenu,Row,Col} from "reactstrap";
-import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,MdShare} from "react-icons/all";
+import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,MdShare,FaStar} from "react-icons/all";
 import {Editor,EditorState} from 'draft-js';
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
@@ -17,6 +17,7 @@ export default class BlogList extends React.Component {
             width: window.innerWidth,
             height: window.innerHeight
         }
+        this.onChange = this.onChange.bind(this);
     }
 
     updateWindowsDimension = () => {
@@ -58,7 +59,6 @@ export default class BlogList extends React.Component {
                                 isOpen={this.state.isOptionsOpen}
                                 toggle={()=>this.setState({isOptionsOpen:!this.state.isOptionsOpen})}
                                 size={'lg'}
-                                direction={'right'}
                                 onMouseDown={(e) => {
                                     e.preventDefault();
                                 }}
@@ -96,8 +96,8 @@ export default class BlogList extends React.Component {
                                         e.preventDefault();
                                     }}
                                 >
-                                    <MdShare size={'20px'}/>
-                                    {' Share'}
+                                    <FaStar size={'20px'}/>
+                                    {' Save'}
                                 </Button>
                             </div>
                             <div className={'col-6'}>
