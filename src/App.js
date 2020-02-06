@@ -8,6 +8,7 @@ import Sidebar from "./Components/SidebarComponent";
 import CodeEditor from "./Components/CodeEditor";
 import PlacementReport from "./Components/PlacementReport";
 import Main from './Components/Main';
+import MyEditor from "./Components/MyEditor";
 export default class App extends React.Component{
 
     constructor(props) {
@@ -70,7 +71,7 @@ export default class App extends React.Component{
 
     render() {
         return(
-            <div  className={'bg-light'}>
+            <div className={'bg-light'}>
                 <NavbarComponent
                     onClickExperience={this.onClickExperience}
                     onClickBlogs = {this.onClickBlogs}
@@ -80,11 +81,9 @@ export default class App extends React.Component{
                     onCLickPractice = {this.onCLickPractice}
                     user = {this.state.user}
                 />
-                <div className={'row'} style={{display: 'flex', justifyContent: 'space-between',marginTop:57}}>
-                    <div className={'col-1'}>
+                <div style={{marginTop:57,minWidth:100}}>
                         <Sidebar/>
-                    </div>
-                    <div className={'col-10'}>
+                    <div className={'container'} style={{float:'left',marginLeft:200}}>
                         <Main/>
                     </div>
                 </div>

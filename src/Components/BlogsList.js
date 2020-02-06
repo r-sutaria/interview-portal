@@ -2,10 +2,12 @@ import React from "react";
 import AnswerBox from "./AnswerBox";
 import {Card,Button,ButtonDropdown,DropdownToggle,DropdownItem,DropdownMenu,Row,Col} from "reactstrap";
 import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,MdShare,FaStar} from "react-icons/all";
-import {Editor,EditorState,convertToRaw,convertFromRaw} from 'draft-js';
+import {Editor,EditorState,convertToRaw,convertFromRaw,CompositeDecorator} from 'draft-js';
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
 import AnswerCard from "./AnswerCard";
+
+
 export default class BlogList extends React.Component {
     constructor(props) {
         super(props);
@@ -13,11 +15,9 @@ export default class BlogList extends React.Component {
             isOptionsOpen: false,
             answer: false,
             answers: [],
-            editorState: EditorState.createEmpty(),
             width: window.innerWidth,
             height: window.innerHeight
-        }
-        this.onChange = this.onChange.bind(this);
+        };
     }
 
     updateWindowsDimension = () => {
@@ -32,19 +32,15 @@ export default class BlogList extends React.Component {
         window.addEventListener('resize',this.updateWindowsDimension);
     }
 
-    onChange = (editorState) => {
-        this.setState({editorState})
-    };
-
-    onSubmit = () => {
+    onSubmit = (editorState) => {
         this.setState({
-            answers: [...this.state.answers,this.state.editorState]
+            answers: [...this.state.answers,editorState]
         });
     };
 
     render() {
         return (
-            <div className={'container mt-2'} style={{minHeight: this.state.height-57}}>
+            <div className={'mt-2'} style={{minHeight: this.state.height-57,width:'1000'}}>
                 <Card>
                     <div className={'mx-4 mt-2 border-bottom'}>
                         <div className={'row'}>
@@ -142,9 +138,7 @@ export default class BlogList extends React.Component {
                     {
                         this.state.answer
                             ? <AnswerBox
-                                    onChange={this.onChange}
                                     onSubmit={this.onSubmit}
-                                    editorState={this.state.editorState}
                             />
                             : <div>
                                 <br/>

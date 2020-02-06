@@ -90,35 +90,38 @@ export default class ExperienceForm extends React.Component {
             <div className={'container'}>
                 <h3 className={'text-center mt-2'}>Interview Experience</h3>
                 <Form className={'card-body'}>
-                    <FormGroup className={'row'}>
-                        <Label
-                            className="col-2 col-form-label "
-                            for={'company'}
-                        >
-                            <h5><b>Company</b></h5>
-                        </Label>
-                        <Input
-                            type='text'
-                            list={'companies'}
-                            name='select'
-                            id='company'
-                            className={'col-2'}
-                            onChange={
-                                (event) => {
-                                    this.setState({
-                                        company: event.target.value
-                                    });
+                    <Row>
+                        <Col md={2} className={'mr-1'}>
+                            <Label
+                                className="col-form-label "
+                                for={'company'}
+                            >
+                                <h5><b>Company</b></h5>
+                            </Label>
+                        </Col>
+                        <Col md={3}>
+                            <Input
+                                type='text'
+                                list={'companies'}
+                                name='select'
+                                id='company'
+                                onChange={
+                                    (event) => {
+                                        this.setState({
+                                            company: event.target.value
+                                        });
+                                    }
                                 }
-                            }
-                        />
-                        <datalist id={'companies'}>
-                            <option value={'Amazon'}>Amazon</option>
-                            <option value={'Media.net'}>Media.net</option>
-                            <option value={'Microsoft'}>Microsoft</option>
-                            <option value={'Samsung'}>Samsung</option>
-                            <option value={'Google'}>Google</option>
-                        </datalist>
-                    </FormGroup>
+                            />
+                            <datalist id={'companies'}>
+                                <option value={'Amazon'}>Amazon</option>
+                                <option value={'Media.net'}>Media.net</option>
+                                <option value={'Microsoft'}>Microsoft</option>
+                                <option value={'Samsung'}>Samsung</option>
+                                <option value={'Google'}>Google</option>
+                            </datalist>
+                        </Col>
+                    </Row>
                     <FormGroup className={'row'}>
                         <Label
                             className="col-2 col-form-label "

@@ -24,8 +24,8 @@ export default class Sidebar extends React.Component {
 
     render() {
         return(
-            <nav className={'sidebar border-dark border-right'} style={{backgroundColor: '#c1c1c1',minHeight:this.state.height-57,width: '13%',position: 'fixed'}}>
-                <div className={'sidebar-sticky'}>
+            <nav className={'sidebar border-dark border-right pt-2'} style={{backgroundColor: '#c1c1c1',minHeight:this.state.height-57,width: '13%',minWidth:200,position: 'fixed',float:'left'}}>
+                <div>
                     <ul className="nav flex-column">
                         <li className="nav-item">
                             <a className={'nav-link active text-dark'} href="#">

@@ -8,6 +8,8 @@ import Sidebar from "./SidebarComponent";
 import CodeEditor from "./CodeEditor";
 import PlacementReport from "./PlacementReport";
 import ExperiencePage from "./ExperiencePage";
+import MyEditor from "./MyEditor";
+import AnswerBox from "./AnswerBox";
 
 export default function Main() {
     return(
