@@ -9,7 +9,7 @@ import CodeEditor from "./Components/CodeEditor";
 import PlacementReport from "./Components/PlacementReport";
 import Main from './Components/Main';
 import MyEditor from "./Components/MyEditor";
-//did this show up?
+//did THIS show up?
 export default class App extends React.Component{
 
     constructor(props) {
