@@ -10,15 +10,17 @@ import PlacementReport from "./PlacementReport";
 import ExperiencePage from "./ExperiencePage";
 import MyEditor from "./MyEditor";
 import AnswerBox from "./AnswerBox";
+import QueryPageComponent from "./QueryPageComponent";
 
 export default function Main() {
     return(
     <Switch>
         <Route exact path={'/'} component={ExperienceForm} />
         <Route exact path={'/practice'} component={CodeEditor} />
-        <Route exact path={'/queries'} component={BlogList}/>
+        <Route exact path={'/queries'} component={QueryPageComponent}/>
         <Route exact path={'/experiences'} component={ExperienceList} />
         <Route exact path={'/experience1'} component={ExperiencePage} />
+        <Route exact path={'/query1'} component={BlogList} />
         <Route exact path={'/placement-report-2019'}
                component={
                    () => <PlacementReport

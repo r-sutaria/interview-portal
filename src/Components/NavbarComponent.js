@@ -269,6 +269,15 @@ export default class NavbarComponent extends React.Component {
                                                 <DropdownItem>
                                                     Messages
                                                 </DropdownItem>
+                                                <DropdownItem>
+                                                    <Link
+                                                        to={'/review-posts'}
+                                                        className={'text-dark'}
+                                                        style={{textDecoration:'none'}}
+                                                    >
+                                                        Review Posts
+                                                    </Link>
+                                                </DropdownItem>
                                                 <DropdownItem divider />
                                                 <DropdownItem
                                                     onClick={(event) => {

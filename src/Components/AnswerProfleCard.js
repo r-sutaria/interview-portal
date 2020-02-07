@@ -5,7 +5,7 @@ export default function AnswerProfileCard(props) {
     return(
         <Media className={'p-1 m-2'}>
             <Media left top href={'#'}>
-                <div className={'p-2'}>
+                <div className={'px-1 py-2 pb-3'}>
                     <Media
                         object
                         src={props.src}
