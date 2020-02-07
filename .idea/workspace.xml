@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/QueryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QueryCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,7 @@
       <workItem from="1580972106972" duration="79000" />
       <workItem from="1580972212340" duration="4773000" />
       <workItem from="1581049412767" duration="5181000" />
-      <workItem from="1581055888476" duration="704000" />
+      <workItem from="1581055888476" duration="3186000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581049606795</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="heroku commit">
+      <created>1581056678125</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1581056678125</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +260,8 @@
     <MESSAGE value="Made styling changes" />
     <MESSAGE value="Made more styling changes" />
     <MESSAGE value="Added query cards." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added query cards." />
+    <MESSAGE value="heroku commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="heroku commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="23" key="#Deployment" timestamp="1580971076031">
@@ -264,6 +272,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#ESLint/0.0.1366.728@0.0.1366.728" timestamp="1579757895881" />
+    <state x="448" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581059059199">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="448" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1581059059199" />
     <state x="511" y="80" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1580972172002">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -368,9 +380,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580878495616" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1580971749258">
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1581058009123">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1580971749258" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1581058009123" />
   </component>
 </project>
