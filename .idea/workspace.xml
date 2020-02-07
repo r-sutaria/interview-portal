@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QueryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QueryCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,7 @@
       <workItem from="1580972106972" duration="79000" />
       <workItem from="1580972212340" duration="4773000" />
       <workItem from="1581049412767" duration="5181000" />
-      <workItem from="1581055888476" duration="3186000" />
+      <workItem from="1581055888476" duration="3841000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581056678125</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added Procfile">
+      <created>1581059106058</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1581059106058</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +267,8 @@
     <MESSAGE value="Made more styling changes" />
     <MESSAGE value="Added query cards." />
     <MESSAGE value="heroku commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroku commit" />
+    <MESSAGE value="Added Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Procfile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="23" key="#Deployment" timestamp="1580971076031">
@@ -284,10 +291,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579675473540" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581056675661">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581059104794">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581056675661" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581059104794" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580972047729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -360,10 +367,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="42" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580972466828" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1581055697833">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1581059121056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581055697833" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581059121056" />
     <state x="563" y="304" key="com.intellij.ide.ui.customization.CustomizableActionsPanel$EditIconDialog" timestamp="1580972019638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
