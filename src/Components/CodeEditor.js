@@ -2,7 +2,7 @@ import React from "react";
 import AceEditor from "react-ace";
 import {Card, Input, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Button} from 'reactstrap';
 import {MdRestore} from "react-icons/all";
-import HackerEarth from 'hackerearth-node';
+import axios from 'axios';
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-python";
@@ -12,10 +12,6 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-xcode";
-
-
-const hE = new HackerEarth('a249b98ec56b0a7e52d802c5e4fe57dffa7b3d0f',1);
-
 export default class CodeEditor extends React.Component {
     constructor(props) {
         super(props);
@@ -222,11 +218,15 @@ export default class CodeEditor extends React.Component {
                             input:'',
                             language: this.state.language
                         };
-                        hE.compile(config).then(result => {
-                            console.log(result.json());
-                        }).then(err => {
-                            console.log(err);
-                        });
+                        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+                        const url = 'https://api.hackerearth.com/v3/code/compile/';
+                        axios.post(proxyUrl+url,config)
+                            .then(resp => {
+                                console.log(resp);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            });
                         e.preventDefault();
                     }}
                 >
