@@ -21,7 +21,7 @@ export default class QueryCard extends React.Component {
 
     render() {
         return (
-            <div className={'border border-dark rounded mr-5 mt-2'}>
+            <div style={{backgroundColor:'#e3e4e6'}} className={'border border-dark rounded mr-5 mt-2'}>
                 <Row>
                     <Col md={11}>
                         <Link to={'/query1'} className={'text-dark btn-link'}>

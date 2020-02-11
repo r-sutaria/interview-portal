@@ -8,9 +8,8 @@ import Sidebar from "./SidebarComponent";
 import CodeEditor from "./CodeEditor";
 import PlacementReport from "./PlacementReport";
 import ExperiencePage from "./ExperiencePage";
-import MyEditor from "./MyEditor";
-import AnswerBox from "./AnswerBox";
 import QueryPageComponent from "./QueryPageComponent";
+import NotificationComponent from "./NotificationComponent";
 
 export default function Main() {
     return(
@@ -21,6 +20,7 @@ export default function Main() {
         <Route exact path={'/experiences'} component={ExperienceList} />
         <Route exact path={'/experience1'} component={ExperiencePage} />
         <Route exact path={'/query1'} component={BlogList} />
+        <Route exact path={'/notifications'} component={NotificationComponent} />
         <Route exact path={'/placement'}
                component={
                    () => <PlacementReport

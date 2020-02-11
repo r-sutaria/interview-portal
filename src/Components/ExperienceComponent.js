@@ -16,7 +16,7 @@ export default class ExperienceList extends React.Component {
                     n_rounds: 3,
                     ctc: '28 Lakhs',
                     stipend: '60k',
-                    receivedOffer: false,
+                    receivedOffer: true,
                     date: '04/02/2020',
                     saved: false
                 }
@@ -33,7 +33,7 @@ export default class ExperienceList extends React.Component {
 
     renderExperienceCard = (experience) => {
         return(
-            <div className={'border border-dark rounded mr-5 mt-2'}>
+            <div style={{backgroundColor:'#e3e4e6'}} className={'border border-dark rounded mr-5 mt-2'}>
                 <Row>
                     <Col md={11}>
                         <Link to={'/experience1'} className={'text-dark btn-link'}>

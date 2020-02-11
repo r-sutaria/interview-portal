@@ -2,6 +2,7 @@ import React from "react";
 import AceEditor from "react-ace";
 import {Card, Input, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Button} from 'reactstrap';
 import {MdRestore} from "react-icons/all";
+import HackerEarth from 'hackerearth-node';
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-python";
@@ -11,6 +12,9 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-xcode";
+
+
+const hE = new HackerEarth('a249b98ec56b0a7e52d802c5e4fe57dffa7b3d0f',1);
 
 export default class CodeEditor extends React.Component {
     constructor(props) {
@@ -25,15 +29,13 @@ export default class CodeEditor extends React.Component {
             language: 'C'
         }
     }
-
     mode_map = {
-        'c' : 'c_cpp',
-        'cpp': 'c_cpp',
-        'java': 'java',
-        'python2.7': 'python',
-        'python3.0': 'python',
-        'kotlin': 'kotlin'
-    }
+        'C' : 'c_cpp',
+        'CPP': 'c_cpp',
+        'JAVA': 'java',
+        'PYTHON': 'python',
+        'KOTLIN': 'kotlin'
+    };
 
     onChange = (value) => {
         this.setState({value})
@@ -185,12 +187,12 @@ export default class CodeEditor extends React.Component {
                                     })
                                 }}
                             >
-                                <option value={'c'}>C</option>
-                                <option value={'cpp'}>C++</option>
-                                <option value={'java'}>Java</option>
-                                <option value={'python2.7'}>Python 2.7</option>
-                                <option value={'python3.0'}>Python 3.0</option>
-                                <option value={'kotlin'}>Kotlin</option>
+                                <option value={'C'}>C</option>
+                                <option value={'CPP'}>C++</option>
+                                <option value={'JAVA'}>Java</option>
+                                <option value={'PYTHON'}>Python 2.7</option>
+                                <option value={'PYTHON'}>Python 3.0</option>
+                                <option value={'KOTLIN'}>Kotlin</option>
                             </Input>
                         </div>
                     </div>
@@ -212,6 +214,21 @@ export default class CodeEditor extends React.Component {
                     className={'my-3 float-right'}
                     style={{marginRight: '17.5%'}}
                     color={'dark'}
+                    onMouseDown={(e) => {
+                        const config={
+                            time_limit: 1,
+                            memory_limit: 323244,
+                            source: this.state.value,
+                            input:'',
+                            language: this.state.language
+                        };
+                        hE.compile(config).then(result => {
+                            console.log(result.json());
+                        }).then(err => {
+                            console.log(err);
+                        });
+                        e.preventDefault();
+                    }}
                 >
                     Submit
                 </Button>
