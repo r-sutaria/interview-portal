@@ -218,15 +218,22 @@ export default class CodeEditor extends React.Component {
                             input:'',
                             language: this.state.language
                         };
-                        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-                        const url = 'https://api.hackerearth.com/v3/code/compile/';
-                        axios.post(proxyUrl+url,config)
-                            .then(resp => {
-                                console.log(resp);
-                            })
-                            .catch(err => {
-                                console.log(err);
-                            });
+                        // const url = 'https://api.hackerearth.com/v3/code/compile/';
+                        // axios.post(url,config)
+                        //     .then(resp => {
+                        //         console.log(resp);
+                        //     })
+                        //     .catch(err => {
+                        //         console.log(err);
+                        //     });
+
+                        fetch('https://api.hackerearth.com/v3/code/compile/',{
+                            method: 'POST',
+                            mode: 'no-cors',
+                            body: JSON.stringify(config)
+                        })
+                            .then(resp => console.log(resp))
+                            .catch(err => console.log(err));
                         e.preventDefault();
                     }}
                 >
