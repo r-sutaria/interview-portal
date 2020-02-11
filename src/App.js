@@ -9,7 +9,7 @@ import CodeEditor from "./Components/CodeEditor";
 import PlacementReport from "./Components/PlacementReport";
 import Main from './Components/Main';
 import MyEditor from "./Components/MyEditor";
-//did THIS show up?
+import {NavbarToggler,Collapse,Navbar,Row,Col} from 'reactstrap';
 export default class App extends React.Component{
 
     constructor(props) {
@@ -20,7 +20,9 @@ export default class App extends React.Component{
             users: {
                 'user1' : 'password',
                 'user2' : 'password1'
-            }
+            },
+            isSidebarOpen: true,
+            navbarHeight: 0
         }
     }
 
@@ -70,25 +72,65 @@ export default class App extends React.Component{
         event.preventDefault();
     };
 
+    onSidebarToggleClick = (e) => {
+        this.setState({
+              isSidebarOpen: !this.state.isSidebarOpen
+        });
+        e.preventDefault();
+    };
+
+    updateNavbarHeight = () => {
+        const height = document.getElementById('top-navbar').offsetHeight;
+        this.setState({
+            navbarHeight: height
+        })
+    };
+
+    componentDidMount() {
+        this.updateNavbarHeight();
+        window.addEventListener('resize',this.updateNavbarHeight);
+    }
+
     render() {
         return(
-            <div className={'bg-light'}>
-                <NavbarComponent
-                    onClickExperience={this.onClickExperience}
-                    onClickBlogs = {this.onClickBlogs}
-                    onClickLogo = {this.onClickLogo}
-                    onClickLogin = {this.onClickLogin}
-                    onClickSignOut = {this.onClickSignOut}
-                    onCLickPractice = {this.onCLickPractice}
-                    user = {this.state.user}
-                />
-                <div style={{marginTop:57,minWidth:100}}>
-                        <Sidebar/>
-                    <div className={'container'} style={{float:'left',marginLeft:200}}>
-                        <Main/>
-                    </div>
-                </div>
+            // <div className={'bg-light'}>
+            //     <NavbarComponent
+            //         onClickExperience={this.onClickExperience}
+            //         onClickBlogs = {this.onClickBlogs}
+            //         onClickLogo = {this.onClickLogo}
+            //         onClickLogin = {this.onClickLogin}
+            //         onClickSignOut = {this.onClickSignOut}
+            //         onCLickPractice = {this.onCLickPractice}
+            //         user = {this.state.user}
+            //     />
+            //     <div style={{marginTop:57,minWidth:100}}>
+            //             <Sidebar/>
+            //         <div className={'container'} style={{float:'left',marginLeft:200}}>
+            //             <Main/>
+            //         </div>
+            //     </div>
+            // </div>
+            <div>
+                <NavbarComponent user={this.state.user} onSidebarToggleClick = {this.onSidebarToggleClick} />
+                {
+                    this.state.isSidebarOpen
+                    ? <div style={{marginTop:this.state.navbarHeight}}>
+                            <div>
+                                <Collapse isOpen={this.state.isSidebarOpen} navbar>
+                                    <Sidebar/>
+                                </Collapse>
+                            </div>
+                            <div style={ {marginLeft:200}} className={'pt-2 pl-3'}>
+                                <Main />
+                            </div>
+                        </div>
+                    :
+                        <div className={'container pt-2'} style={{marginTop:this.state.navbarHeight}}>
+                            <Main />
+                        </div>
+                }
             </div>
+
         );
     }
 }

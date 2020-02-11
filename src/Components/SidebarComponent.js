@@ -1,5 +1,17 @@
 import React from 'react';
-import {Nav, NavItem, NavLink, NavbarToggler, Navbar} from 'reactstrap';
+import {
+    Nav,
+    NavItem,
+    NavLink,
+    NavbarToggler,
+    Navbar,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledDropdown
+} from 'reactstrap';
+import {Link} from 'react-router-dom';
+import {AiFillNotification,FaBookmark,AiFillEdit,FaQuestionCircle,MdHistory,AiOutlineCode,IoMdStats} from 'react-icons/all';
 export default class Sidebar extends React.Component {
 
     constructor(props) {
@@ -24,33 +36,82 @@ export default class Sidebar extends React.Component {
 
     render() {
         return(
-            <nav className={'sidebar border-dark border-right pt-2'} style={{backgroundColor: '#c1c1c1',minHeight:this.state.height-57,width: '13%',minWidth:200,position: 'fixed',float:'left'}}>
+            <nav className={'sidebar border-dark border-right'} style={{backgroundColor: '#c1c1c1',minHeight:this.state.height-57,width: '13%',minWidth:200,position: 'fixed',float:'left'}}>
                 <div>
                     <ul className="nav flex-column">
                         <li className="nav-item">
-                            <a className={'nav-link active text-dark'} href="#">
-                                <b>Notifications</b>
-                            </a>
+                            <Link to={'/notifications'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <AiFillNotification size={20}/>
+                                    </span>
+                                    {' '}Notifications
+                                </b>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className={'nav-link active text-dark'} href="#">
-                                <b>Saved</b>
-                            </a>
+                            <Link to={'/saved'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <FaBookmark size={20}/>
+                                    </span>
+                                    {' '}Saved
+                                </b>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className={'nav-link active text-dark'} href="#">
-                                <b>Ask A Query</b>
-                            </a>
+                            <Link to={'/queries'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <FaQuestionCircle size={20}/>
+                                    </span>
+                                    {' '}Queries
+                                </b>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className={'nav-link active text-dark'} href="#">
-                                <b>Share your Interview Experience</b>
-                            </a>
+                            <Link to={'/experiences'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <AiFillEdit size={20}/>
+                                    </span>
+                                    {' '}Experiences
+                                </b>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className={'nav-link active text-dark'} href="#">
-                                <b>History</b>
-                            </a>
+                            <Link to={'/history'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <MdHistory size={20}/>
+                                    </span>
+                                    {' '} History
+                                </b>
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to={'/practice'} className={'nav-link active text-dark'}>
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <AiOutlineCode size={20}/>
+                                    </span>
+                                    {' '} Practice
+                                </b>
+                            </Link>
+                        </li>
+                        <li className={'nav-item'}>
+                            <Link
+                                className={'nav-link active text-dark'}
+                                to={'/placement'}
+                            >
+                                <b>
+                                    <span className={'mb-1 col-form-label'}>
+                                        <IoMdStats size={20}/>
+                                    </span>
+                                    {' '}
+                                    Placements
+                                </b>
+                            </Link>
                         </li>
                     </ul>
                 </div>

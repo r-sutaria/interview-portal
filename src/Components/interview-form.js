@@ -1,9 +1,7 @@
 import React from "react";
-// import {Navbar,NavbarBrand,Collapse,NavbarToggler,Nav,NavItem,NavLink,NavbarText} from 'reactstrap';
 import {Form,FormGroup,Label,Input,Button,Row,Col,FormText,Card,CustomInput} from 'reactstrap';
 import RoundCard from "./RoundCard";
 export default class ExperienceForm extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -87,19 +85,19 @@ export default class ExperienceForm extends React.Component {
 
     render() {
         return (
-            <div className={'container'}>
+            <div>
                 <h3 className={'text-center mt-2'}>Interview Experience</h3>
                 <Form className={'card-body'}>
                     <Row>
                         <Col md={2} className={'mr-1'}>
                             <Label
-                                className="col-form-label "
+                                className="col-form-label"
                                 for={'company'}
                             >
                                 <h5><b>Company</b></h5>
                             </Label>
                         </Col>
-                        <Col md={3}>
+                        <Col md={'auto'}>
                             <Input
                                 type='text'
                                 list={'companies'}
@@ -122,96 +120,112 @@ export default class ExperienceForm extends React.Component {
                             </datalist>
                         </Col>
                     </Row>
-                    <FormGroup className={'row'}>
-                        <Label
-                            className="col-2 col-form-label "
-                        >
-                            <h5><b>Job Type</b></h5>
-                        </Label>
-                        <Label check className={'col-auto col-form-label'}>
-                            <Input
-                                type = "radio"
-                                name = "job-type"
-                                onChange = {(e) => {
-                                    this.setState({
-                                        internship: e.target.value,
-                                        employment: false,
-                                        jobType: '2-month Internship'
-                                    })
-                                }}
-                            />
-                            <b> 2-month Internship </b>
-                        </Label>
-                        <Label check className={'col-auto col-form-label'}>
-                            <Input
-                                type="radio"
-                                name="job-type"
-                                onChange = {(e) => {
-                                    this.setState({
-                                        internship: e.target.value,
-                                        employment: false,
-                                        jobType: '6-month Internship'
-                                    })
-                                }}
-                            />
-                            <b> 6-month Internship </b>
-                        </Label>
-                        <Label check className={'col-auto col-form-label'}>
-                            <Input
-                                type="radio"
-                                name="job-type"
-                                onChange = {(e) => {
-                                    this.setState({
-                                        internship: false,
-                                        employment: e.target.value,
-                                        jobType: 'Full TIme Employment'
-                                    })
-                                }}
-                            />
-                            <b> Full Time Employment </b>
-                        </Label>
-                        <Label check className={'col-auto col-form-label'}>
-                            <Input
-                                type="radio"
-                                name="job-type"
-                                onChange = {(e) => {
-                                    this.setState({
-                                        internship: e.target.value,
-                                        employment: e.target.value,
-                                        jobType: '6-month + Full time Employment'
-                                    })
-                                }}
-                            />
-                            <b> 6-month + Full time Employment </b>
-                        </Label>
+                    <FormGroup>
+                        <Row>
+                            <Col md={2} className={'mr-2'}>
+                                <Label
+                                    className="col-form-label"
+                                >
+                                    <h5><b>Job Type</b></h5>
+                                </Label>
+                            </Col>
+                            <Col md={'auto'} className={'ml-3'}>
+                                <Label check className={'col-form-label'}>
+                                    <Input
+                                        type = "radio"
+                                        name = "job-type"
+                                        onChange = {(e) => {
+                                            this.setState({
+                                                internship: e.target.value,
+                                                employment: false,
+                                                jobType: '2-month Internship'
+                                            })
+                                        }}
+                                    />
+                                    <b>2-month Internship</b>
+                                </Label>
+                            </Col>
+                            <Col md={'auto'}  className={'ml-3'}>
+                                <Label check className={'col-form-label'}>
+                                    <Input
+                                        type="radio"
+                                        name="job-type"
+                                        onChange = {(e) => {
+                                            this.setState({
+                                                internship: e.target.value,
+                                                employment: false,
+                                                jobType: '6-month Internship'
+                                            })
+                                        }}
+                                    />
+                                    <b> 6-month Internship </b>
+                                </Label>
+                            </Col>
+                            <Col md={'auto'}  className={'ml-3'}>
+                                <Label check className={'col-form-label'}>
+                                    <Input
+                                        type="radio"
+                                        name="job-type"
+                                        onChange = {(e) => {
+                                            this.setState({
+                                                internship: false,
+                                                employment: e.target.value,
+                                                jobType: 'Full TIme Employment'
+                                            })
+                                        }}
+                                    />
+                                    <b> Full Time Employment </b>
+                                </Label>
+                            </Col>
+                            <Col md={'auto'}  className={'ml-3'}>
+                                <Label check className={'col-form-label'}>
+                                    <Input
+                                        type="radio"
+                                        name="job-type"
+                                        onChange = {(e) => {
+                                            this.setState({
+                                                internship: e.target.value,
+                                                employment: e.target.value,
+                                                jobType: '6-month + Full time Employment'
+                                            })
+                                        }}
+                                    />
+                                    <b> 6-month + Full time Employment </b>
+                                </Label>
+                            </Col>
+                        </Row>
                     </FormGroup>
                     <FormGroup>
                         {
                             this.state.internship
                             ?
-                                <FormGroup className={'row mt-1'}>
-                                    <Label
-                                        className="col-2 col-form-label "
-                                        for={'stipend'}
-                                    >
-                                        <h5><b>Stipend</b></h5>
-                                    </Label>
-                                    < Input
-                                        type='number'
-                                        name='number'
-                                        id='stipend'
-                                        min={'0'}
-                                        className={'col-2'}
-                                        onChange={(e) => {
-                                            this.setState({
-                                                stipend: e.target.value + ' per month'
-                                            })
-                                        }
-                                        }
-                                    />
-                                    <div className={'col-lg-3 col-form-label'}>
-                                        <b> per month</b>
-                                    </div>
+                                <FormGroup>
+                                    <Row>
+                                        <Col md={2}>
+                                            <Label
+                                                className="col-form-label "
+                                                for={'stipend'}
+                                            >
+                                                <h5><b>Stipend</b></h5>
+                                            </Label>
+                                        </Col>
+                                        <Col md={10}>
+                                            <Input
+                                                type='number'
+                                                name='number'
+                                                id='stipend'
+                                                min={'0'}
+                                                className={'col-3 float-left'}
+                                                onChange={(e) => {
+                                                    this.setState({
+                                                        stipend: e.target.value + ' per month'
+                                                    })
+                                                }
+                                                }
+                                            />
+                                            <b className={'float-left ml-2 col-form-label'}>per month</b>
+                                        </Col>
+                                    </Row>
                                 </FormGroup>
                             :
                                 <div></div>
@@ -219,85 +233,102 @@ export default class ExperienceForm extends React.Component {
                         {
                             this.state.employment
                                 ?
-                                <FormGroup className={'row mt-1'}>
-                                    <Label
-                                        className="col-2 col-form-label "
-                                        for={'ctc'}
-                                    >
-                                        <h5><b>CTC</b></h5>
-                                    </Label>
-                                    < Input
-                                        type='number'
-                                        name='number'
-                                        id='ctc'
-                                        className={'col-2'}
-                                        min={'0'}
-                                        onChange={(e) => {
-                                            this.setState({
-                                                ctc: e.target.value + ' per annum'
-                                            })
-                                        }
-                                        }
-                                    />
-                                    <div className={'col-lg-2 col-form-label'}>
-                                        <b>per annum</b>
-                                    </div>
+                                <FormGroup className={'mt-1'}>
+                                    <Row>
+                                        <Col className={2}>
+                                            <Label
+                                                className="col-form-label"
+                                                for={'ctc'}
+                                            >
+                                                <h5><b>CTC</b></h5>
+                                            </Label>
+                                        </Col>
+                                        <Col md={10}>
+                                            <Input
+                                                type='number'
+                                                name='number'
+                                                id='ctc'
+                                                className={'col-3 float-left'}
+                                                min={'0'}
+                                                onChange={(e) => {
+                                                    this.setState({
+                                                        ctc: e.target.value + ' per annum'
+                                                    })
+                                                }
+                                                }
+                                            />
+                                            <b className={'ml-2 float-left col-form-label'}>per annum</b>
+                                        </Col>
+                                    </Row>
                                 </FormGroup>
                                 :
                                 <div></div>
                         }
                     </FormGroup>
-                    <FormGroup className={'row'}>
-                        <Label
-                            className="col-2 col-form-label"
-                            for={'job-profile'}
-                        >
-                            <h5><b>Job Profile</b></h5>
-                        </Label>
-                        <Input
-                            type='text'
-                            name='text'
-                            id={'job-profile'}
-                            className={'col-lg-4'}
-                            value={this.state.jobProfile}
-                            onChange={(e) => {
-                                this.setState({
-                                    jobProfile: e.target.value
-                                })
-                            }}
-                        />
+                    <FormGroup>
+                        <Row>
+                            <Col md={2}>
+                                <Label
+                                    className="col-form-label"
+                                    for={'job-profile'}
+                                >
+                                    <h5><b>Job Profile</b></h5>
+                                </Label>
+                            </Col>
+                            <Col md={3}>
+                                <Input
+                                    type='text'
+                                    name='text'
+                                    id={'job-profile'}
+                                    value={this.state.jobProfile}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            jobProfile: e.target.value
+                                        })
+                                    }}
+                                />
+                            </Col>
+                        </Row>
                     </FormGroup>
-                    <FormGroup className={'row'}>
-                        <Label
-                            className={'col-2 col-form-label'}
-                            for={'receivedOffer'}
-                        >
-                            <h5><b>Received Offer</b></h5>
-                        </Label>
-                        <CustomInput
-                            className={'col-form-label'}
-                            id={'receivedOfferYes'}
-                            type={'radio'}
-                            name={'offerSwitch'}
-                            onChange={(e) => {
-                                this.setState({
-                                    receivedOffer: true
-                                });
-                            }}
-                        />
-                        <Label for={'receivedOfferYes'} className={'col-form-label mr-3'}><b>Yes</b></Label>
-                        <CustomInput
-                            className={'col-form-label'}
-                            id={'receivedOfferNo'}
-                            type={'radio'}
-                            name={'offerSwitch'}
-                            onChange={(e) => {
-                                this.setState({
-                                    receivedOffer: false
-                                });
-                            }}
-                        />
-                        <Label for={'receivedOfferNo'} className={'col-form-label'}><b>No</b></Label>
+                    <FormGroup>
+                        <Row>
+                            <Col md={2}>
+                                <Label
+                                    className={'col-form-label'}
+                                    for={'receivedOffer'}
+                                >
+                                    <h5><b>Received Offer</b></h5>
+                                </Label>
+                            </Col>
+                            <Col md={1}>
+                                <CustomInput
+                                    className={'col-form-label float-left'}
+                                    id={'receivedOfferYes'}
+                                    type={'radio'}
+                                    name={'offerSwitch'}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            receivedOffer: true
+                                        });
+                                    }}
+                                />
+                                <Label for={'receivedOfferYes'} className={'col-form-label float-left'}><b>Yes</b></Label>
+                            </Col>
+                            <Col md={2}>
+                                <CustomInput
+                                    className={'col-form-label float-left'}
+                                    id={'receivedOfferNo'}
+                                    type={'radio'}
+                                    name={'offerSwitch'}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            receivedOffer: false
+                                        });
+                                    }}
+                                />
+                                <Label for={'receivedOfferNo'} className={'col-form-label float-left'}><b>No</b></Label>
+                            </Col>
+                        </Row>
                     </FormGroup>
                     <FormGroup>
                     {

@@ -46,21 +46,28 @@ export default class QueryCard extends React.Component {
                         description={'8th semester CSE student'}
                     />
                     <div className={'ml-3 mt-1'}>
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Mug up geeks for geeks.
-                        Hello!!
-                        ...
+                        <p style={{override:'hidden',lineHeight:'1.5em',height:'3em'}}>
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                            Mug up geeks for geeks.
+                        </p>
                         <Link to={'/query1/answer1'}>
                             (more)
                         </Link>

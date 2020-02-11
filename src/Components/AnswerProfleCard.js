@@ -3,9 +3,9 @@ import {Media} from 'reactstrap';
 
 export default function AnswerProfileCard(props) {
     return(
-        <Media className={'p-1 m-2'}>
+        <Media>
             <Media left top href={'#'}>
-                <div className={'px-1 py-2 pb-3'}>
+                <div className={'p-3 m-1'}>
                     <Media
                         object
                         src={props.src}

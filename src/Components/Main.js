@@ -21,7 +21,7 @@ export default function Main() {
         <Route exact path={'/experiences'} component={ExperienceList} />
         <Route exact path={'/experience1'} component={ExperiencePage} />
         <Route exact path={'/query1'} component={BlogList} />
-        <Route exact path={'/placement-report-2019'}
+        <Route exact path={'/placement'}
                component={
                    () => <PlacementReport
                        branchChartData={[50,60,70, 70, 70, 70, 70, 70]}
