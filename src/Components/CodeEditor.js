@@ -213,16 +213,7 @@ export default class CodeEditor extends React.Component {
                     style={{marginRight: '17.5%'}}
                     color={'dark'}
                     onMouseDown={(e) => {
-                        const config={
-                            time_limit: 1,
-                            memory_limit: 323244,
-                            source: this.state.value,
-                            input:'',
-                            language: this.state.language
-                        };
-                        he.compile(config)
-                            .then(res => console.log(res))
-                            .catch(err => console.log(err));
+                        alert("Thai gyu bc!");
                         e.preventDefault();
                     }}
                 >

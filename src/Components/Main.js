@@ -10,7 +10,7 @@ import PlacementReport from "./PlacementReport";
 import ExperiencePage from "./ExperiencePage";
 import QueryPageComponent from "./QueryPageComponent";
 import NotificationComponent from "./NotificationComponent";
-
+import SearchPage from "./SearchPage";
 export default function Main() {
     return(
     <Switch>
@@ -21,6 +21,7 @@ export default function Main() {
         <Route exact path={'/experience1'} component={ExperiencePage} />
         <Route exact path={'/query1'} component={BlogList} />
         <Route exact path={'/notifications'} component={NotificationComponent} />
+        <Route path={'/search::term'} component={SearchPage} />
         <Route exact path={'/placement'}
                component={
                    () => <PlacementReport

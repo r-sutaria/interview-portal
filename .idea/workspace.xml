@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/SearchPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/CodeEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CodeEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,11 @@
       <workItem from="1581055888476" duration="4861000" />
       <workItem from="1581309780766" duration="521000" />
       <workItem from="1581311706694" duration="11091000" />
-      <workItem from="1581394361114" duration="30477000" />
+      <workItem from="1581394361114" duration="32463000" />
+      <workItem from="1581484170509" duration="1738000" />
+      <workItem from="1581498453089" duration="1181000" />
+      <workItem from="1581777087670" duration="208000" />
+      <workItem from="1581778720076" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -267,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581415746037</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed the CORS error 2">
+      <created>1581441693252</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1581441693252</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +325,8 @@
     <MESSAGE value="Added HackerEarth API to the practice page for compiling and running the source code" />
     <MESSAGE value="Fixed the CORS error" />
     <MESSAGE value="Fixed the CORS error 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the CORS error 1" />
+    <MESSAGE value="Fixed the CORS error 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the CORS error 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="23" key="#Deployment" timestamp="1580971076031">
@@ -338,30 +349,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579675473540" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581415744457">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581441690387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581415744457" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581441690387" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580972047729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580972047729" />
-    <state width="661" height="114" key="GridCell.Tab.0.bottom" timestamp="1581436876735">
+    <state width="661" height="114" key="GridCell.Tab.0.bottom" timestamp="1581483845526">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581436876735" />
-    <state width="661" height="114" key="GridCell.Tab.0.center" timestamp="1581436876733">
+    <state width="661" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581483845526" />
+    <state width="661" height="114" key="GridCell.Tab.0.center" timestamp="1581483845525">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581436876733" />
-    <state width="661" height="114" key="GridCell.Tab.0.left" timestamp="1581436876733">
+    <state width="661" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581483845525" />
+    <state width="661" height="114" key="GridCell.Tab.0.left" timestamp="1581483845525">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581436876733" />
-    <state width="661" height="114" key="GridCell.Tab.0.right" timestamp="1581436876735">
+    <state width="661" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581483845525" />
+    <state width="661" height="114" key="GridCell.Tab.0.right" timestamp="1581483845526">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581436876735" />
+    <state width="661" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581483845526" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1580374871701">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -414,22 +425,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="42" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580972466828" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1581416030140">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1581441695122">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581416030140" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581441695122" />
     <state x="563" y="304" key="com.intellij.ide.ui.customization.CustomizableActionsPanel$EditIconDialog" timestamp="1580972019638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="563" y="304" key="com.intellij.ide.ui.customization.CustomizableActionsPanel$EditIconDialog/0.0.1366.728@0.0.1366.728" timestamp="1580972019638" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581394366057">
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581778811062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581394366057" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581778811062" />
     <state x="492" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580971707094">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1580971707094" />
+    <state x="65" y="89" key="new project wizard" timestamp="1581482627003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="89" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1581482627003" />
     <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1581403443709">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
