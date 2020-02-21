@@ -79,6 +79,7 @@ export default class NavbarComponent extends React.Component {
                     className={'border-dark border-bottom'}
                     fixed={'top'}
                     id={'top-navbar'}
+                    // style={{width:762,display:'inline-block'}}
                 >
                     <div className={'container-fluid'}>
                         <div className={'mr-4'}>
@@ -96,27 +97,29 @@ export default class NavbarComponent extends React.Component {
                                     onMouseDown = {(e) => e.preventDefault()}
                                 >
                                     InterviewPortal
+                                    TODO: Material UI
                                 </Link>
                             </NavbarBrand>
                         </div>
                         {/*<div className="d-flex flex-grow-1 float-right">*/}
                         {/*</div>*/}
-                        <NavbarToggler onClick={(event)=>{
-                            this.setState({
-                                isOpen: !this.state.isOpen
-                            });
-                            event.preventDefault();
-                            }}
-                        />
-                        <Collapse isOpen={this.state.isOpen} navbar>
+                        {/*<NavbarToggler onClick={(event)=>{*/}
+                        {/*    this.setState({*/}
+                        {/*        isOpen: !this.state.isOpen*/}
+                        {/*    });*/}
+                        {/*    event.preventDefault();*/}
+                        {/*    }}*/}
+                        {/*/>*/}
+                        {/*<Collapse isOpen={this.state.isOpen} navbar>*/}
                             <Nav className={'mr-auto'} navbar={true}>
                             </Nav>
-                            <Nav navbar={true}>
+                            <Nav>
                                 <NavItem>
                                     <Form className="mr-2 my-auto w-20 d-inline-block order-1">
                                         <InputGroup>
                                             <Input type="text"
                                                    placeholder="Search"
+                                                   className={'float-right'}
                                             />
                                             <InputGroupAddon addonType={'append'}>
                                                 <Button
@@ -130,129 +133,131 @@ export default class NavbarComponent extends React.Component {
                                         </InputGroup>
                                     </Form>
                                 </NavItem>
-                                {
-                                    !this.props.user ?
-                                        <NavItem>
-                                            <Button
-                                                color={'link text-white'}
-                                                style={{
-                                                    textDecoration: 'none'
-                                                }}
-                                                onClick={(event) => {
-                                                    this.toggleLogin();
-                                                    event.preventDefault();
-                                                }}
-                                            >
-                                                Login / SignUp
-                                            </Button>
-                                            <Modal
-                                                isOpen={this.state.loginOpen}
-                                                toggle={this.toggleLogin}
-                                            >
-                                                <ModalHeader toggle={this.toggleLogin}>Login</ModalHeader>
-                                                <ModalBody>
-                                                    <LoginForm
-                                                        onChangeUsernameLogin={this.onChangeUsernameLogin}
-                                                        onChangePasswordLogin={this.onChangePasswordLogin}
-                                                        username={this.state.username}
-                                                        passsword={this.state.password}
-                                                    />
-                                                </ModalBody>
-                                                <ModalFooter>
-                                                    <Button
-                                                        color={'link text-dark'}
-                                                        style={{
-                                                            textDecoration: 'none'
-                                                        }}
-                                                        onClick={(event) => {
-                                                            this.toggleSignUp();
-                                                            event.preventDefault();
-                                                        }}
-                                                    >
-                                                        <b>Not a member? Sign Up</b>
-                                                    </Button>
-                                                    <Button
-                                                        color={'success'}
-                                                        onClick={(event) =>
-                                                            this.props.onClickLogin(event, this.state.username, this.state.password)
-                                                        }
-                                                    >
-                                                        Login
-                                                    </Button>
-                                                </ModalFooter>
-                                            </Modal>
-                                            <Modal
-                                                isOpen={this.state.signUpOpen}
-                                                toggle={this.toggleSignUp}
-                                            >
-                                                <ModalHeader toggle={this.toggleSignUp}>Sign Up</ModalHeader>
-                                                <ModalBody>
-                                                    <SignUpForm/>
-                                                </ModalBody>
-                                                <ModalFooter>
-                                                    <Button
-                                                        color={'link text-dark'}
-                                                        style={{
-                                                            textDecoration: 'none'
-                                                        }}
-                                                        onClick={(event) => {
-                                                            this.toggleLogin();
-                                                            event.preventDefault();
-                                                        }}
-                                                    >
-                                                        <b>Already a member? Login</b>
-                                                    </Button>
-                                                    <Button
-                                                        color={'success'}
-                                                        onClick={
-                                                            (event) => {
-                                                                event.preventDefault();
-                                                            }
-                                                        }
-                                                    >
-                                                        Sign Up
-                                                    </Button>
-                                                </ModalFooter>
-                                            </Modal>
-                                        </NavItem>
-                                        :
-                                        <UncontrolledDropdown nav inNavbar>
-                                            <DropdownToggle nav caret className={'text-white'}>
-                                                {this.props.user}
-                                            </DropdownToggle>
-                                            <DropdownMenu right>
-                                                <DropdownItem>
-                                                    Profile
-                                                </DropdownItem>
-                                                <DropdownItem>
-                                                    Messages
-                                                </DropdownItem>
-                                                <DropdownItem>
-                                                    <Link
-                                                        to={'/review-posts'}
-                                                        className={'text-dark'}
-                                                        style={{textDecoration:'none'}}
-                                                    >
-                                                        Review Posts
-                                                    </Link>
-                                                </DropdownItem>
-                                                <DropdownItem divider />
-                                                <DropdownItem
-                                                    onClick={(event) => {
-                                                        this.props.onClickSignOut(event);
-                                                        this.setState({
-                                                            loginOpen: false,
-                                                            signUpOpen: false
-                                                        })
-                                                    }}
-                                                >
-                                                    SignOut
-                                                </DropdownItem>
-                                            </DropdownMenu>
-                                        </UncontrolledDropdown>
-                                }
                             </Nav>
-                        </Collapse>
+                            {/*<Nav>*/}
+                                {/*{*/}
+                                {/*    !this.props.user ?*/}
+                                {/*        <NavItem className={'mr-2 my-auto w-20 d-inline-block order-1'}>*/}
+                                {/*            <Button*/}
+                                {/*                color={'link text-white'}*/}
+                                {/*                style={{*/}
+                                {/*                    textDecoration: 'none'*/}
+                                {/*                }}*/}
+                                {/*                onClick={(event) => {*/}
+                                {/*                    this.toggleLogin();*/}
+                                {/*                    event.preventDefault();*/}
+                                {/*                }}*/}
+                                {/*            >*/}
+                                {/*                Login / SignUp*/}
+                                {/*            </Button>*/}
+                                {/*            <Modal*/}
+                                {/*                isOpen={this.state.loginOpen}*/}
+                                {/*                toggle={this.toggleLogin}*/}
+                                {/*            >*/}
+                                {/*                <ModalHeader toggle={this.toggleLogin}>Login</ModalHeader>*/}
+                                {/*                <ModalBody>*/}
+                                {/*                    <LoginForm*/}
+                                {/*                        onChangeUsernameLogin={this.onChangeUsernameLogin}*/}
+                                {/*                        onChangePasswordLogin={this.onChangePasswordLogin}*/}
+                                {/*                        username={this.state.username}*/}
+                                {/*                        passsword={this.state.password}*/}
+                                {/*                    />*/}
+                                {/*                </ModalBody>*/}
+                                {/*                <ModalFooter>*/}
+                                {/*                    <Button*/}
+                                {/*                        color={'link text-dark'}*/}
+                                {/*                        style={{*/}
+                                {/*                            textDecoration: 'none'*/}
+                                {/*                        }}*/}
+                                {/*                        onClick={(event) => {*/}
+                                {/*                            this.toggleSignUp();*/}
+                                {/*                            event.preventDefault();*/}
+                                {/*                        }}*/}
+                                {/*                    >*/}
+                                {/*                        <b>Not a member? Sign Up</b>*/}
+                                {/*                    </Button>*/}
+                                {/*                    <Button*/}
+                                {/*                        color={'success'}*/}
+                                {/*                        onClick={(event) =>*/}
+                                {/*                            this.props.onClickLogin(event, this.state.username, this.state.password)*/}
+                                {/*                        }*/}
+                                {/*                    >*/}
+                                {/*                        Login*/}
+                                {/*                    </Button>*/}
+                                {/*                </ModalFooter>*/}
+                                {/*            </Modal>*/}
+                                {/*            <Modal*/}
+                                {/*                isOpen={this.state.signUpOpen}*/}
+                                {/*                toggle={this.toggleSignUp}*/}
+                                {/*            >*/}
+                                {/*                <ModalHeader toggle={this.toggleSignUp}>Sign Up</ModalHeader>*/}
+                                {/*                <ModalBody>*/}
+                                {/*                    <SignUpForm/>*/}
+                                {/*                </ModalBody>*/}
+                                {/*                <ModalFooter>*/}
+                                {/*                    <Button*/}
+                                {/*                        color={'link text-dark'}*/}
+                                {/*                        style={{*/}
+                                {/*                            textDecoration: 'none'*/}
+                                {/*                        }}*/}
+                                {/*                        onClick={(event) => {*/}
+                                {/*                            this.toggleLogin();*/}
+                                {/*                            event.preventDefault();*/}
+                                {/*                        }}*/}
+                                {/*                    >*/}
+                                {/*                        <b>Already a member? Login</b>*/}
+                                {/*                    </Button>*/}
+                                {/*                    <Button*/}
+                                {/*                        color={'success'}*/}
+                                {/*                        onClick={*/}
+                                {/*                            (event) => {*/}
+                                {/*                                event.preventDefault();*/}
+                                {/*                            }*/}
+                                {/*                        }*/}
+                                {/*                    >*/}
+                                {/*                        Sign Up*/}
+                                {/*                    </Button>*/}
+                                {/*                </ModalFooter>*/}
+                                {/*            </Modal>*/}
+                                {/*        </NavItem>*/}
+                                {/*        :*/}
+                                {/*        <UncontrolledDropdown nav inNavbar className={'float-right'}>*/}
+                                {/*            <DropdownToggle nav caret className={'text-white'}>*/}
+                                {/*                {this.props.user}*/}
+                                {/*            </DropdownToggle>*/}
+                                {/*            <DropdownMenu right>*/}
+                                {/*                <DropdownItem>*/}
+                                {/*                    Profile*/}
+                                {/*                </DropdownItem>*/}
+                                {/*                <DropdownItem>*/}
+                                {/*                    Messages*/}
+                                {/*                </DropdownItem>*/}
+                                {/*                <DropdownItem>*/}
+                                {/*                    <Link*/}
+                                {/*                        to={'/review-posts'}*/}
+                                {/*                        className={'text-dark'}*/}
+                                {/*                        style={{textDecoration:'none'}}*/}
+                                {/*                    >*/}
+                                {/*                        Review Posts*/}
+                                {/*                    </Link>*/}
+                                {/*                </DropdownItem>*/}
+                                {/*                <DropdownItem divider />*/}
+                                {/*                <DropdownItem*/}
+                                {/*                    onClick={(event) => {*/}
+                                {/*                        this.props.onClickSignOut(event);*/}
+                                {/*                        this.setState({*/}
+                                {/*                            loginOpen: false,*/}
+                                {/*                            signUpOpen: false*/}
+                                {/*                        })*/}
+                                {/*                    }}*/}
+                                {/*                >*/}
+                                {/*                    SignOut*/}
+                                {/*                </DropdownItem>*/}
+                                {/*            </DropdownMenu>*/}
+                                {/*        </UncontrolledDropdown>*/}
+                                {/*}*/}
+                            {/*</Nav>*/}
+                        {/*</Collapse>*/}
                     </div>
                 </Navbar>
             </div>

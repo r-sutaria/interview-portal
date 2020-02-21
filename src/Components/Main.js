@@ -12,11 +12,15 @@ import QueryPageComponent from "./QueryPageComponent";
 import NotificationComponent from "./NotificationComponent";
 import SearchPage from "./SearchPage";
 import SavedPage from "./SavedPage";
+import PracticePage from "./PracticePage";
+import LoginPage from "./LoginPage";
+import ReviewPage from "./ReviewPage";
 export default function Main() {
     return(
     <Switch>
         <Route exact path={'/'} component={ExperienceForm} />
-        <Route exact path={'/practice'} component={CodeEditor} />
+        <Route exact path={'/practice/problem1'} component={CodeEditor} />
+        <Route exact path={'/practice'} component={PracticePage} />
         <Route exact path={'/queries'} component={QueryPageComponent}/>
         <Route exact path={'/experiences'} component={ExperienceList} />
         <Route exact path={'/experience1'} component={ExperiencePage} />
@@ -24,10 +28,13 @@ export default function Main() {
         <Route exact path={'/notifications'} component={NotificationComponent} />
         <Route path={'/search::term'} component={SearchPage} />
         <Route path={'/saved'} component={SavedPage} />
+        <Route path={'/login'} component={LoginPage} />
+        <Route path={'/review'} component={ReviewPage} />
+        <Route exact path={'/interview-experience-form'} component={ExperienceForm} />
         <Route exact path={'/placement'}
                component={
                    () => <PlacementReport
-                       branchChartData={[50,60,70, 70, 70, 70, 70, 70]}
+                       branchChartData={[170,120,30, 60, 40, 50, 10, 20]}
                        classChartData={[20,50,100,200]}
                        yearChartData={[120,160,180,200]}
                        branchLabels = {['Computer Engineering', 'Information Technology', 'Electronics & Communication', 'Electrical Engineering', 'Mechanical Engineering', 'Chemical Engineering', 'Civil Engineering', 'Integration & Circuits']}

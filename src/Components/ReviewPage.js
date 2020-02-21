@@ -1,7 +1,6 @@
 import React from 'react';
 import ExperienceCard from "./ExperienceCard";
-import QueryCard from "./QueryCard";
-export default class SavedPage extends React.Component {
+export default class ReviewPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +15,8 @@ export default class SavedPage extends React.Component {
                 receivedOffer: true,
                 date: '04/02/2020',
                 saved: false,
-                helpful: 56
+                helpful: 56,
+                accepted: false
             }
         }
     }
@@ -29,10 +29,17 @@ export default class SavedPage extends React.Component {
     };
 
     render() {
-        return(
+        return (
             <div>
-                <ExperienceCard experience={this.state.experience} accepted={false} onSaveClick={this.onSaveClick} />
-                <QueryCard />
+                {
+                    this.state.experiences.map(experience => {
+                            return(!experience.accepted ? <ExperienceCard experience={experience} onSaveClick={this.onSaveClick}/>
+                                    : <div />
+                            )
+                        }
+                    )
+                }
+                <ExperienceCard experience={this.state.experience} onSaveClick={this.onSaveClick}/>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import AnswerProfileCard from "./AnswerProfleCard";
-import {Button} from "reactstrap";
-import {FaRegStar,FaTimesCircle,FaCheckCircle} from "react-icons/all";
+import {Button, Input} from "reactstrap";
+import {FaRegStar,FaTimesCircle,FaCheckCircle,FaThumbsUp,FaThumbsDown,FaRegThumbsDown,FaRegThumbsUp} from "react-icons/all";
 
 export default class ExperiencePage extends React.Component {
     constructor(props) {
@@ -17,6 +17,8 @@ export default class ExperiencePage extends React.Component {
                 receivedOffer: true,
                 date: '04/02/2020',
                 saved: false,
+                accepted: 'none',
+                helpful: 'none',
                 rounds:[
                     {
                         id: '1',
@@ -83,6 +85,14 @@ export default class ExperiencePage extends React.Component {
                         <FaRegStar size={20}/>
                     </Button>
                 </div>
+                {
+                    experience.accepted === 'yes' ?
+                        <h6 className={'ml-4'}>
+                            <span className={'text-success'}> <FaThumbsUp/></span> 56 people found this helpful
+                        </h6>
+                        :
+                        <div/>
+                }
                 <div className={'ml-2 mb-3 border-top'}>
                     <AnswerProfileCard
                         src={'/pikachu.jpg'}
@@ -107,6 +117,90 @@ export default class ExperiencePage extends React.Component {
                             })}
                         </div>
                     </div>
+                    {
+                        experience.accepted === 'yes' ?
+                            <h6 className={'border-top pt-2 pl-4'}>
+                                Was this experience helpful?{' '}
+                                <Button size={'sm'} color={'white'} className={'mb-1 text-success'}
+                                        onMouseDown={(e) => {
+                                            const exp = experience;
+                                            exp.helpful = 'yes';
+                                            this.setState({
+                                                experience: exp
+                                            });
+                                            e.preventDefault();
+                                        }}
+                                >
+                                    {experience.helpful === 'yes' ? <FaThumbsUp/> : <FaRegThumbsUp/>}
+                                </Button>
+                                <Button size={'sm'} color={'white'} className={'mb-1 text-danger'}
+                                        onMouseDown={(e) => {
+                                            const exp = experience;
+                                            exp.helpful = 'no';
+                                            this.setState({
+                                                experience: exp
+                                            });
+                                            e.preventDefault();
+                                        }}
+                                >
+                                    {experience.helpful === 'no' ? <FaThumbsDown/> : <FaRegThumbsDown/>}
+                                </Button>
+                            </h6>
+                            :
+                            <div className={'border-top pt-2 pl-4'}>
+                                <Button
+                                    className={'mr-2 mb-2'}
+                                    color={'success'}
+                                    size={'sm'}
+                                    onMouseDown={(e) => {
+                                        e.preventDefault();
+                                        const exp = experience;
+                                        exp.accepted = 'yes';
+                                        this.setState({
+                                            experience: exp
+                                        })
+                                    }
+                                    }
+                                >
+                                    Accept
+                                </Button>
+                                <Button
+                                    className={'mb-2'}
+                                    color={'danger'}
+                                    size={'sm'}
+                                    onMouseDown={(e) => {
+                                        e.preventDefault();
+                                        const exp = experience;
+                                        exp.accepted = 'no';
+                                        this.setState({
+                                            experience: exp
+                                        })
+                                    }
+                                    }
+                                >
+                                    Reject
+                                </Button>
+                            </div>
+                    }
+                    {
+                        experience.accepted === 'no' ? <div>
+                            <div className={'pt-2 pl-4'}>
+                                <Input
+                                    type={'textarea'}
+                                    name={'text'}
+                                    rows={5}
+                                    placeholder={'Reason for rejection...'}
+                                />
+                            </div>
+                            <div className={'pt-2 pl-4 float-right'}>
+                                <Button color={'dark'} size={'sm'}>
+                                    Submit
+                                </Button>
+                            </div>
+                        </div>
+                            :
+                            <div/>
+                    }
                 </div>
             </div>
         );

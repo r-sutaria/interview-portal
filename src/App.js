@@ -58,12 +58,13 @@ export default class App extends React.Component{
         }
     };
 
-    onClickSignOut = (event) => {
+    onClickLogOut = (event) => {
         this.setState({
             user: null
         });
         event.preventDefault();
     };
+
 
     onCLickPractice = (event) => {
         this.setState({
@@ -98,8 +99,7 @@ export default class App extends React.Component{
             //         onClickExperience={this.onClickExperience}
             //         onClickBlogs = {this.onClickBlogs}
             //         onClickLogo = {this.onClickLogo}
-            //         onClickLogin = {this.onClickLogin}
-            //         onClickSignOut = {this.onClickSignOut}
+            //
             //         onCLickPractice = {this.onCLickPractice}
             //         user = {this.state.user}
             //     />
@@ -111,13 +111,13 @@ export default class App extends React.Component{
             //     </div>
             // </div>
             <div>
-                <NavbarComponent user={this.state.user} onSidebarToggleClick = {this.onSidebarToggleClick} />
+                <NavbarComponent onSidebarToggleClick = {this.onSidebarToggleClick}/>
                 {
                     this.state.isSidebarOpen
                     ? <div style={{marginTop:this.state.navbarHeight}}>
                             <div>
                                 <Collapse isOpen={this.state.isSidebarOpen} navbar>
-                                    <Sidebar/>
+                                    <Sidebar user={this.state.user} onClickLogin = {this.onClickLogin} onClickLogOut = {this.onClickLogOut}/>
                                 </Collapse>
                             </div>
                             <div style={ {marginLeft:200}} className={'pt-2 pl-3'}>

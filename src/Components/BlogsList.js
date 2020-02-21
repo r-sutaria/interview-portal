@@ -1,7 +1,7 @@
 import React from "react";
 import AnswerBox from "./AnswerBox";
 import {Card,Button,ButtonDropdown,DropdownToggle,DropdownItem,DropdownMenu,Row,Col} from "reactstrap";
-import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,MdShare,FaStar} from "react-icons/all";
+import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,FaStar,MdReport} from "react-icons/all";
 import {Editor,EditorState,convertToRaw,convertFromRaw,CompositeDecorator} from 'draft-js';
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
@@ -20,6 +20,40 @@ export default class BlogList extends React.Component {
         };
     }
 
+    onClickHelpful = (e,currentAnswer) => {
+        e.preventDefault();
+        const {answers} = this.state;
+        console.log(currentAnswer);
+        const newAnswers = answers.map(answer => {
+           return answer.id ===  currentAnswer.id ? {
+               id:answer.id,
+               answer: currentAnswer.answer,
+               helpful: 'yes'
+           }
+           :
+               answer
+        });
+        console.log(newAnswers);
+        this.setState({answers: newAnswers});
+    };
+
+    onClickNotHelpful = (e,currentAnswer) => {
+        e.preventDefault();
+        const {answers} = this.state;
+        console.log(currentAnswer);
+        const newAnswers = answers.map(answer => {
+            return answer.id ===  currentAnswer.id ? {
+                    id:answer.id,
+                    answer: currentAnswer.answer,
+                    helpful: 'no'
+                }
+                :
+                answer
+        });
+        console.log(newAnswers);
+        this.setState({answers: newAnswers});
+    };
+
     updateWindowsDimension = () => {
         this.setState({
             width: window.innerWidth,
@@ -34,7 +68,10 @@ export default class BlogList extends React.Component {
 
     onSubmit = (editorState) => {
         this.setState({
-            answers: [...this.state.answers,editorState]
+            answers: [...this.state.answers,
+                {id: this.state.answers.length,answer: editorState, helpful: 'none'}
+            ],
+            answer: !this.state.answer
         });
     };
 
@@ -49,29 +86,11 @@ export default class BlogList extends React.Component {
                                     What are some tips to crack the Amazon interview?
                                 </h4>
                             </b>
-                            <ButtonDropdown
-                                className={'float-right col-1'}
-                                color={'white'}
-                                isOpen={this.state.isOptionsOpen}
-                                toggle={()=>this.setState({isOptionsOpen:!this.state.isOptionsOpen})}
-                                size={'lg'}
-                                onMouseDown={(e) => {
-                                    e.preventDefault();
-                                }}
-                            >
-                                <DropdownToggle title={'Options'} className={'bg-white text-dark border-0'}>
-                                    <FaEllipsisH/>
-                                </DropdownToggle>
-                                <DropdownMenu style={{fontStyle: 'normal'}}>
-                                    <Button className={'ml-3 text-dark'} color={'white'}><b>Report</b></Button>
-                                    <Button className={'ml-3 text-dark'} color={'white'}><b>Answer Later</b></Button>
-                                </DropdownMenu>
-                            </ButtonDropdown>
                         </div>
                         <div className={'row mb-1'}>
                             <div className={'col-6'}>
                                 <Button
-                                    className={'border-0'}
+                                    className={'border-0 mb-2'}
                                     color={'dark'}
                                     size={'sm'}
                                     onMouseDown={(e) => {
@@ -85,7 +104,7 @@ export default class BlogList extends React.Component {
                                     {' Answer'}
                                 </Button>
                                 <Button
-                                    className={'border-0 ml-2'}
+                                    className={'border-0 ml-2 mb-2'}
                                     color={'dark'}
                                     size={'sm'}
                                     onMouseDown={(e) => {
@@ -108,6 +127,17 @@ export default class BlogList extends React.Component {
                                         }}
                                     >
                                         <FaComment/>
+                                    </Button>
+                                    <Button
+                                        className={'border-0 mb-1'}
+                                        color={'white'}
+                                        title={'Report this question'}
+                                        onMouseDown={(e) => {
+                                            console.log('mouse down!');
+                                            e.preventDefault();
+                                        }}
+                                    >
+                                        <MdReport/>
                                     </Button>
                                     <Button
                                         className={'border-0 mb-1'}
@@ -146,7 +176,11 @@ export default class BlogList extends React.Component {
                     }
                     {
                         this.state.answers[0]
-                        ?   <AnswerCard editorState={this.state.answers[0]} />
+                        ?   <AnswerCard
+                                answer={this.state.answers[0]}
+                                onClickHelpful={this.onClickHelpful}
+                                onClickNotHelpful={this.onClickNotHelpful}
+                            />
                         : <div></div>
                     }
                 </Card>
