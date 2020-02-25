@@ -1,7 +1,7 @@
 import React from "react";
 import AnswerBox from "./AnswerBox";
 import {Card,Button,ButtonDropdown,DropdownToggle,DropdownItem,DropdownMenu,Row,Col} from "reactstrap";
-import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,FaStar,MdReport} from "react-icons/all";
+import {FaComment,FaEllipsisH,FaFacebookF,FaTwitter,AiFillEdit,FaStar,MdReport,AiOutlineStop} from "react-icons/all";
 import {Editor,EditorState,convertToRaw,convertFromRaw,CompositeDecorator} from 'draft-js';
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
@@ -137,7 +137,7 @@ export default class BlogList extends React.Component {
                                             e.preventDefault();
                                         }}
                                     >
-                                        <MdReport/>
+                                        <AiOutlineStop/>
                                     </Button>
                                     <Button
                                         className={'border-0 mb-1'}

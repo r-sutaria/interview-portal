@@ -5,6 +5,7 @@ import {FaCheckCircle, FaRegStar, FaStar, FaThumbsUp, FaTimesCircle} from "react
 
 export default function ExperienceCard(props) {
     const {experience} = props;
+    console.log(experience);
     return(
         <div style={{backgroundColor:'#e3e4e6'}} className={'border border-dark rounded mr-5 mt-2'}>
             <Row>

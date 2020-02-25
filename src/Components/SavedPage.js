@@ -16,7 +16,8 @@ export default class SavedPage extends React.Component {
                 receivedOffer: true,
                 date: '04/02/2020',
                 saved: false,
-                helpful: 56
+                helpful: 56,
+                accepted: 'yes'
             }
         }
     }

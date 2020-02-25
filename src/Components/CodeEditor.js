@@ -213,7 +213,7 @@ export default class CodeEditor extends React.Component {
                     style={{marginRight: '17.5%'}}
                     color={'dark'}
                     onMouseDown={(e) => {
-                        alert("Thai gyu bc!");
+                        // alert("Thai gyu bc!");
                         e.preventDefault();
                     }}
                 >

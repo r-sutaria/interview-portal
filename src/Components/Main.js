@@ -15,6 +15,8 @@ import SavedPage from "./SavedPage";
 import PracticePage from "./PracticePage";
 import LoginPage from "./LoginPage";
 import ReviewPage from "./ReviewPage";
+import AnswerBox from "./AnswerBox";
+import UserPage from "./UserPage";
 export default function Main() {
     return(
     <Switch>
@@ -31,6 +33,7 @@ export default function Main() {
         <Route path={'/login'} component={LoginPage} />
         <Route path={'/review'} component={ReviewPage} />
         <Route exact path={'/interview-experience-form'} component={ExperienceForm} />
+        <Route exact path={'/usr/user1'} component={UserPage} />
         <Route exact path={'/placement'}
                component={
                    () => <PlacementReport

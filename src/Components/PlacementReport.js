@@ -84,7 +84,7 @@ export default class PlacementReport extends Component {
                 className="container"
             >
                 <h3 className={'text-center'}>
-                    Placement Report 2019-20
+                    College Placement Cell
                 </h3>
                 <br/>
                 <p>
@@ -110,6 +110,13 @@ export default class PlacementReport extends Component {
                     <h3 className={'text-center'}>
                         Placement Statistics
                     </h3>
+                    <h6>
+                        Yearly Placement Graph
+                    </h6>
+                    {this.renderLineChart(yearChartData,yearLabels)}
+                    <h6>
+                        Placement Pie-chart
+                    </h6>
                     <Input
                         name={'select'}
                         type={'select'}
@@ -124,11 +131,9 @@ export default class PlacementReport extends Component {
                     >
                         <option value={'branch'}>Branch Wise</option>
                         <option value={'class'}>Class Wise</option>
-                        <option value={'year'}>Year Wise</option>
                     </Input>
                     {this.state.chartType === 'branch' ? this.renderPieChart(branchChartData,branchLabels):<div></div>}
                     {this.state.chartType === 'class' ? this.renderPieChart(classChartData,classLabels):<div></div>}
-                    {this.state.chartType === 'year' ? this.renderLineChart(yearChartData,yearLabels):<div></div>}
                 </div>
             </div>
         );

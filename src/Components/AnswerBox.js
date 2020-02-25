@@ -20,10 +20,18 @@ export default class AnswerBox extends React.Component {
             innerHeight: 0,
             url:'',
             showURLInput: false,
-            editorState: EditorState.createEmpty(decorator)
+            editorState: EditorState.createEmpty(decorator),
+            editorContent: <div />
         };
-
-        this.onChange = (editorState) => this.setState({editorState});
+        // this.editorRef = React.createRef();
+        this.onChange = (editorState) => {
+            this.setState({editorState,
+                editorContent: this.editor.editor.innerHTML
+            });
+            // console.log(this.editor);
+            // document.getElementById('editorContent').innerHTML = this.state.editorContent;
+            // console.log(ReactDOM.findDOMNode(this).innerHTML)
+        };
         this.promptForLink = this._promptForLink.bind(this);
         this.onURLChange = (e) => this.setState({urlValue: e.target.value});
         this.confirmLink = this._confirmLink.bind(this);
@@ -286,12 +294,16 @@ export default class AnswerBox extends React.Component {
                         />
                     </div>
                 </div>
+                <div id={'editorContent'}>
+
+                </div>
                 <Button
                     type={'submit'}
                     color={'dark'}
                     className={'mt-1 ml-3 mb-2'}
                     onClick={(e) => {
                         e.preventDefault();
+                        document.getElementById('editorContent').innerHTML = this.state.editorContent;
                         this.props.onSubmit(this.state.editorState);
                     }}
                     size={'sm'}

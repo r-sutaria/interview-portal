@@ -4,7 +4,7 @@ export default class ReviewPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            experience: {
+            experiences: [{
                 companyName: 'Amazon',
                 author: 'Rutvik Sutaria',
                 jobType: '6 month Internship + FTE',
@@ -16,8 +16,8 @@ export default class ReviewPage extends React.Component {
                 date: '04/02/2020',
                 saved: false,
                 helpful: 56,
-                accepted: false
-            }
+                accepted: 'none'
+            }]
         }
     }
 
@@ -33,13 +33,13 @@ export default class ReviewPage extends React.Component {
             <div>
                 {
                     this.state.experiences.map(experience => {
-                            return(!experience.accepted ? <ExperienceCard experience={experience} onSaveClick={this.onSaveClick}/>
+                            return(experience.accepted !== 'yes' ? <ExperienceCard experience={experience} onSaveClick={this.onSaveClick}/>
                                     : <div />
                             )
                         }
                     )
                 }
-                <ExperienceCard experience={this.state.experience} onSaveClick={this.onSaveClick}/>
+                {/*<ExperienceCard experience={this.state.experience} onSaveClick={this.onSaveClick}/>*/}
             </div>
         );
     }
