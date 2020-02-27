@@ -294,17 +294,17 @@ export default class AnswerBox extends React.Component {
                         />
                     </div>
                 </div>
-                <div id={'editorContent'}>
+                {/*<div id={'editorContent'}>*/}
 
-                </div>
+                {/*</div>*/}
                 <Button
                     type={'submit'}
                     color={'dark'}
                     className={'mt-1 ml-3 mb-2'}
                     onClick={(e) => {
                         e.preventDefault();
-                        document.getElementById('editorContent').innerHTML = this.state.editorContent;
-                        this.props.onSubmit(this.state.editorState);
+                        // document.getElementById('editorContent').innerHTML = this.state.editorContent;
+                        this.props.onSubmit(this.state.editorContent);
                     }}
                     size={'sm'}
                 >

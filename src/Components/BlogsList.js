@@ -6,6 +6,7 @@ import {Editor,EditorState,convertToRaw,convertFromRaw,CompositeDecorator} from 
 import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
 import AnswerCard from "./AnswerCard";
+import {Link} from "react-router-dom";
 
 
 export default class BlogList extends React.Component {
@@ -14,7 +15,26 @@ export default class BlogList extends React.Component {
         this.state = {
             isOptionsOpen: false,
             answer: false,
-            answers: [],
+            answers: [
+                {
+                    id: 0,
+                    answer:
+                        <div>
+                            I attended Amazon interview recently. You need to be good at basics of data structures,
+                            algorithms and object oriented design.
+                            One cannot read object oriented concepts and become a master in it.
+                            Try implementing it in whatever the project you're doing.
+                            That way it's easy to gain the intuition about the object oriented programming and design.
+                            I prepared for data structure questions from cracking the coding interview.
+                            You need to understand the basics of the important data structures and
+                            how they work and try implementing the basic version of those.
+                            This will help in understanding its applications and apply those data structures to solve the questions
+                            asked by the interviewer in the minimum complexity. I have noticed that they are not satisfied with our solutions
+                            if it is not with minimum space and time complexity.
+                        </div>,
+                    helpful: 'none'
+                }
+            ],
             width: window.innerWidth,
             height: window.innerHeight
         };
@@ -66,10 +86,10 @@ export default class BlogList extends React.Component {
         window.addEventListener('resize',this.updateWindowsDimension);
     }
 
-    onSubmit = (editorState) => {
+    onSubmit = (editorContent) => {
         this.setState({
             answers: [...this.state.answers,
-                {id: this.state.answers.length,answer: editorState, helpful: 'none'}
+                {id: this.state.answers.length,answer: editorContent, helpful: 'none'}
             ],
             answer: !this.state.answer
         });
@@ -175,13 +195,12 @@ export default class BlogList extends React.Component {
                             </div>
                     }
                     {
-                        this.state.answers[0]
-                        ?   <AnswerCard
-                                answer={this.state.answers[0]}
-                                onClickHelpful={this.onClickHelpful}
-                                onClickNotHelpful={this.onClickNotHelpful}
-                            />
-                        : <div></div>
+                        this.state.answers.map(answer =>
+                        <AnswerCard
+                            answer={answer}
+                            onClickHelpful={this.onClickHelpful}
+                            onClickNotHelpful={this.onClickNotHelpful}
+                        />)
                     }
                 </Card>
             </div>

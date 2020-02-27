@@ -15,7 +15,10 @@ export default function AnswerCard(props){
                 description={'8th semester CSE student'}
             />
             <div className={'m-3'}>
-                <Editor editorState={ans.answer} readOnly={true}/>
+                {/*<Editor editorState={ans.answer} readOnly={true}/>*/}
+                <div>
+                    {ans.answer}
+                </div>
                 <div className={'mt-2 pt-2 border-top'}>
                     {
                         ans.helpful !== 'none' ? <span>
