@@ -32,7 +32,7 @@ export default class SavedPage extends React.Component {
     render() {
         return(
             <div>
-                <ExperienceCard experience={this.state.experience} accepted={false} onSaveClick={this.onSaveClick} />
+                <ExperienceCard experience={this.state.experience} link={'/experience2'} accepted={false} onSaveClick={this.onSaveClick} />
                 <QueryCard />
             </div>
         );

@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/UserPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AnswerBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/BlogsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BlogsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CodeEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CodeEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ExperiencePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperiencePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavbarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavbarComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlacementReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlacementReport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QueryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QueryCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ReviewPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SavedPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SavedPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SidebarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SidebarComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UserPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +59,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="ts.external.directory.path" value="C:\Users\hp\IdeaProjects\interview-portal\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -149,7 +145,9 @@
       <workItem from="1582088171623" duration="8582000" />
       <workItem from="1582175288465" duration="287000" />
       <workItem from="1582281065809" duration="5159000" />
-      <workItem from="1582605325090" duration="8668000" />
+      <workItem from="1582605325090" duration="9575000" />
+      <workItem from="1582692050156" duration="11736000" />
+      <workItem from="1582777071873" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -319,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582293507852</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Retrieved HTML from DraftEditor&#10;Updated QueryPage&#10;Added UserPage.js">
+      <created>1582618704107</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1582618704107</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Experience form completed" />
     <MESSAGE value="Added login and sign up forms" />
     <MESSAGE value="Added answer box and some fields in the interview form.&#10;//TODO: styling of the form" />
     <MESSAGE value="Added queries and answers page" />
@@ -374,7 +378,8 @@
     <MESSAGE value="Added searching page" />
     <MESSAGE value="Added SavedPage.js" />
     <MESSAGE value="Added ExperienceCard.js &#10;Updated login UI&#10;Added Was this helpful options in Experience and Query pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ExperienceCard.js &#10;Updated login UI&#10;Added Was this helpful options in Experience and Query pages." />
+    <MESSAGE value="Retrieved HTML from DraftEditor&#10;Updated QueryPage&#10;Added UserPage.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Retrieved HTML from DraftEditor&#10;Updated QueryPage&#10;Added UserPage.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="23" key="#Deployment" timestamp="1580971076031">
@@ -401,30 +406,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="101" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581849814648" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582293500924">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582618697071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582293500924" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582618697071" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580972047729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580972047729" />
-    <state width="661" height="114" key="GridCell.Tab.0.bottom" timestamp="1582613954582">
+    <state width="1323" height="114" key="GridCell.Tab.0.bottom" timestamp="1582637776124">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582613954582" />
-    <state width="661" height="114" key="GridCell.Tab.0.center" timestamp="1582613954582">
+    <state width="1323" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582637776124" />
+    <state width="1323" height="114" key="GridCell.Tab.0.center" timestamp="1582637776124">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582613954582" />
-    <state width="661" height="114" key="GridCell.Tab.0.left" timestamp="1582613954582">
+    <state width="1323" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582637776124" />
+    <state width="1323" height="114" key="GridCell.Tab.0.left" timestamp="1582637776124">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582613954582" />
-    <state width="661" height="114" key="GridCell.Tab.0.right" timestamp="1582613954582">
+    <state width="1323" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582637776124" />
+    <state width="1323" height="114" key="GridCell.Tab.0.right" timestamp="1582637776124">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582613954582" />
+    <state width="1323" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582637776124" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1580374871701">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -485,10 +490,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="563" y="304" key="com.intellij.ide.ui.customization.CustomizableActionsPanel$EditIconDialog/0.0.1366.728@0.0.1366.728" timestamp="1580972019638" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582605323848">
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582777081679">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582605323848" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582777081679" />
     <state x="492" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582607793553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

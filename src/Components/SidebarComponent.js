@@ -155,16 +155,6 @@ export default class Sidebar extends React.Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={'/history'} className={'nav-link active text-dark'}>
-                                <b>
-                                    <span className={'mb-1 col-form-label'}>
-                                        <MdHistory size={20}/>
-                                    </span>
-                                    {' '} History
-                                </b>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link to={'/practice'} className={'nav-link active text-dark'}>
                                 <b>
                                     <span className={'mb-1 col-form-label'}>
@@ -283,7 +273,7 @@ export default class Sidebar extends React.Component {
                                         this.setState({
                                             loginOpen: false,
                                             signUpOpen: false
-                                        })
+                                        });
                                         this.props.onClickLogOut(event);
                                     }}
                                 >

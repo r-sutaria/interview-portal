@@ -57,6 +57,16 @@ export default class ExperiencePage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        if(this.props.accepted !== undefined){
+            let exp = this.state.experience;
+            exp.accepted = this.props.accepted;
+            this.setState({
+                experience: exp
+            })
+        }
+    }
+
     renderRound = (round) => {
         return(
             <div>
@@ -124,7 +134,12 @@ export default class ExperiencePage extends React.Component {
                                 <Button size={'sm'} color={'white'} className={'mb-1 text-success'}
                                         onMouseDown={(e) => {
                                             const exp = experience;
-                                            exp.helpful = 'yes';
+                                            if(exp.helpful === 'yes') {
+                                                exp.helpful = 'none';
+                                            }
+                                            else{
+                                                exp.helpful = 'yes'
+                                            }
                                             this.setState({
                                                 experience: exp
                                             });
@@ -136,7 +151,12 @@ export default class ExperiencePage extends React.Component {
                                 <Button size={'sm'} color={'white'} className={'mb-1 text-danger'}
                                         onMouseDown={(e) => {
                                             const exp = experience;
-                                            exp.helpful = 'no';
+                                            if(exp.helpful === 'no') {
+                                                exp.helpful = 'none';
+                                            }
+                                            else{
+                                                exp.helpful = 'no'
+                                            }
                                             this.setState({
                                                 experience: exp
                                             });

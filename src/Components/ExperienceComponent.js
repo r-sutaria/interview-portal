@@ -98,7 +98,7 @@ export default class ExperienceList extends React.Component {
                 {/*<ExperienceCard experience={experiences[0]} onSaveClick={this.onSaveClick}/>*/}
                 {
                     this.state.experiences.map(experience => {
-                        return(experience.accepted ? <ExperienceCard experience={experience} onSaveClick={this.onSaveClick}/>
+                        return(experience.accepted ? <ExperienceCard experience={experience} link={'/experience2'} onSaveClick={this.onSaveClick}/>
                             : <div />
                         )
                     })
