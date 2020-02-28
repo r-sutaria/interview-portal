@@ -7,6 +7,7 @@ import CodeEditor from "./CodeEditor";
 import '../Images/pikachu.jpg';
 import AnswerCard from "./AnswerCard";
 import {Link} from "react-router-dom";
+import {edit} from "ace-builds";
 
 
 export default class BlogList extends React.Component {
@@ -87,9 +88,12 @@ export default class BlogList extends React.Component {
     }
 
     onSubmit = (editorContent) => {
+        const divElement = <div dangerouslySetInnerHTML={{__html:
+            editorContent}}>
+        </div>;
         this.setState({
             answers: [...this.state.answers,
-                {id: this.state.answers.length,answer: editorContent, helpful: 'none'}
+                {id: this.state.answers.length,answer: divElement, helpful: 'none'}
             ],
             answer: !this.state.answer
         });

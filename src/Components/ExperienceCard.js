@@ -31,7 +31,7 @@ export default function ExperienceCard(props) {
                 {`Received Offer:  `}{ experience.receivedOffer ? <span className={'text-success ml-1'}><FaCheckCircle /></span> : <span className={'text-danger ml-1'}><FaTimesCircle /></span>}
                 <br/>
                 {
-                    experience.accepted ? <h6>
+                    experience.accepted === 'yes' ? <h6>
                         <span className={'text-success'}><FaThumbsUp size={14}/></span>{' '+experience.helpful+' '} people found this helpful
                     </h6>
                         :

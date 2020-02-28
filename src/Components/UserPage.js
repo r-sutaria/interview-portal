@@ -1,6 +1,7 @@
 import React from 'react';
 import {FaUserEdit} from "react-icons/all";
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader,Form,Label,Input} from 'reactstrap';
+import {Link} from 'react-router-dom';
 export default class UserPage extends React.Component {
 
     constructor(props) {
@@ -80,7 +81,9 @@ export default class UserPage extends React.Component {
                         this.state.experiences.map((item,index) => {
                             return this.renderItems(item,index);
                         })
+
                     }
+                    <Link to={'/usr/user1/experiences'}>See All</Link>
                 </div>
 
                 <div className={'mt-3'}>
@@ -92,6 +95,7 @@ export default class UserPage extends React.Component {
                             return this.renderItems(item,index);
                         })
                     }
+                    <Link to={'/usr/user1/queries'}>See All</Link>
                 </div>
 
                 <div className={'mt-3'}>
@@ -104,6 +108,7 @@ export default class UserPage extends React.Component {
                         })
                     }
                 </div>
+                <Link to={'/usr/user1/problems-solved'}>See All</Link>
                 <Modal
                     isOpen={this.state.open}
                     toggle={this.toggleModal}

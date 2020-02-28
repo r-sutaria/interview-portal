@@ -97,7 +97,6 @@ export default class NavbarComponent extends React.Component {
                                     onMouseDown = {(e) => e.preventDefault()}
                                 >
                                     InterviewPortal
-                                    {/*TODO: Material UI*/}
                                 </Link>
                             </NavbarBrand>
                         </div>
@@ -126,6 +125,9 @@ export default class NavbarComponent extends React.Component {
                                                     className="btn-outline-dark border border-left-0"
                                                     type="button"
                                                     color={'light'}
+                                                    onMouseDown={(e)=>{
+                                                        e.preventDefault();
+                                                    }}
                                                 >
                                                     <FaSearch/>
                                                 </Button>

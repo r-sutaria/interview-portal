@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5f210eb9-c036-4982-aed7-12011ecaaf08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AnswerBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AnswerCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnswerProfleCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerProfleCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/BlogsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BlogsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ExperienceComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavbarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavbarComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UserPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/interview-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/interview-form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +147,7 @@
       <workItem from="1582281065809" duration="5159000" />
       <workItem from="1582605325090" duration="9575000" />
       <workItem from="1582692050156" duration="11736000" />
-      <workItem from="1582777071873" duration="2606000" />
+      <workItem from="1582777071873" duration="7958000" />
     </task>
     <task id="LOCAL-00001" summary="Experience form completed">
       <created>1579855015331</created>
@@ -327,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582778629619</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated QueryPage to support multiple answers">
+      <created>1582780259730</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1582780259730</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +368,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added answer box and some fields in the interview form.&#10;//TODO: styling of the form" />
     <MESSAGE value="Added queries and answers page" />
     <MESSAGE value="Added Code editor and problem statements page." />
     <MESSAGE value="Made the application multi-paged." />
@@ -382,7 +392,8 @@
     <MESSAGE value="Added ExperienceCard.js &#10;Updated login UI&#10;Added Was this helpful options in Experience and Query pages." />
     <MESSAGE value="Retrieved HTML from DraftEditor&#10;Updated QueryPage&#10;Added UserPage.js" />
     <MESSAGE value="Updated the UserPage.js and differentiated review experience and accepted experience page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the UserPage.js and differentiated review experience and accepted experience page" />
+    <MESSAGE value="Updated QueryPage to support multiple answers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated QueryPage to support multiple answers" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="23" key="#Deployment" timestamp="1580971076031">
@@ -409,10 +420,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="101" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581849814648" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582778621198">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582780257875">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582778621198" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582780257875" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580972047729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

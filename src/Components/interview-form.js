@@ -348,7 +348,7 @@ export default class ExperienceForm extends React.Component {
                         <Button
                             color={'dark'}
                             className={'mr-auto'}
-                            onClick={
+                            onMouseDown={
                                 (event) => {
                                     this.addRound(event);
                                 }

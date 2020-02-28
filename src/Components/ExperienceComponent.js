@@ -21,7 +21,7 @@ export default class ExperienceList extends React.Component {
                     date: '04/02/2020',
                     saved: false,
                     helpful: 56,
-                    accepted: false
+                    accepted: 'none'
                 },
                 {
                     companyName: 'Amazon',
@@ -35,7 +35,7 @@ export default class ExperienceList extends React.Component {
                     date: '04/02/2020',
                     saved: false,
                     helpful: 56,
-                    accepted: true
+                    accepted: 'yes'
                 }
             ]
         }
@@ -98,7 +98,7 @@ export default class ExperienceList extends React.Component {
                 {/*<ExperienceCard experience={experiences[0]} onSaveClick={this.onSaveClick}/>*/}
                 {
                     this.state.experiences.map(experience => {
-                        return(experience.accepted ? <ExperienceCard experience={experience} link={'/experience2'} onSaveClick={this.onSaveClick}/>
+                        return(experience.accepted === 'yes' ? <ExperienceCard experience={experience} link={'/experience2'} onSaveClick={this.onSaveClick}/>
                             : <div />
                         )
                     })
